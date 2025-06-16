@@ -1,0 +1,268 @@
+2025-06-06 23:26:55,321 - INFO - 
+--- Running SARIMAX with Feature Set 1: ['TA', 'SW_IN'] ---
+2025-06-06 23:26:55,353 - INFO - 
+VIF Analysis:
+2025-06-06 23:26:55,354 - INFO - VIF Threshold: 5
+2025-06-06 23:26:55,359 - INFO - Initial Features:
+   Variable       VIF
+0        TA  6.256958
+2  TS_1_1_1  5.095029
+3  is_night  3.376057
+2025-06-06 23:26:55,374 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-06-06 23:26:55,383 - INFO - Final Features:
+   Variable       VIF
+0     SW_IN  3.480617
+2  is_night  3.354770
+1  TS_1_1_1  1.127538
+2025-06-06 23:26:55,490 - INFO - Differencing: d=0, D=0
+2025-06-06 23:56:02,853 - INFO - Evaluation Metrics for Feature Set 1:
+2025-06-06 23:56:02,866 - INFO - MAE: 2.5851
+2025-06-06 23:56:02,867 - INFO - RMSE: 3.2657
+2025-06-06 23:56:02,867 - INFO - R²: 0.4845
+2025-06-06 23:56:03,210 - INFO - 
+--- Running SARIMAX with Feature Set 2: ['TA', 'SW_IN', 'TS_1_1_1'] ---
+2025-06-06 23:56:03,258 - INFO - 
+VIF Analysis:
+2025-06-06 23:56:03,260 - INFO - VIF Threshold: 5
+2025-06-06 23:56:03,263 - INFO - Initial Features:
+   Variable       VIF
+0        TA  6.256958
+2  TS_1_1_1  5.095029
+3  is_night  3.376057
+2025-06-06 23:56:03,295 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-06-06 23:56:03,300 - INFO - Final Features:
+   Variable       VIF
+0     SW_IN  3.480617
+2  is_night  3.354770
+1  TS_1_1_1  1.127538
+2025-06-06 23:56:03,422 - INFO - Differencing: d=0, D=0
+2025-06-07 00:25:00,884 - INFO - Evaluation Metrics for Feature Set 2:
+2025-06-07 00:25:00,909 - INFO - MAE: 2.5851
+2025-06-07 00:25:00,914 - INFO - RMSE: 3.2657
+2025-06-07 00:25:00,915 - INFO - R²: 0.4845
+2025-06-07 00:25:01,361 - INFO - 
+--- Running SARIMAX with Feature Set 3: ['TA', 'SW_IN', 'TA_SWIN'] ---
+2025-06-07 00:25:01,424 - INFO - 
+VIF Analysis:
+2025-06-07 00:25:01,426 - INFO - VIF Threshold: 5
+2025-06-07 00:25:01,433 - INFO - Initial Features:
+   Variable       VIF
+0        TA  6.256963
+2  TS_1_1_1  5.097649
+3  is_night  3.948025
+4   TA_SWIN  2.142662
+2025-06-07 00:25:01,458 - INFO - Only whitelist items with high vif available - abort...
+2025-06-07 00:25:01,464 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-06-07 00:25:01,467 - INFO - Final Features:
+   Variable       VIF
+0     SW_IN  6.153885
+2  is_night  3.926540
+3   TA_SWIN  2.142660
+1  TS_1_1_1  1.129980
+2025-06-07 00:25:01,629 - INFO - Differencing: d=0, D=0
+2025-06-07 01:19:58,567 - INFO - Evaluation Metrics for Feature Set 3:
+2025-06-07 01:19:58,602 - INFO - MAE: 2.5580
+2025-06-07 01:19:58,612 - INFO - RMSE: 3.2241
+2025-06-07 01:19:58,615 - INFO - R²: 0.4975
+2025-06-07 01:19:59,086 - INFO - 
+--- Running SARIMAX with Feature Set 4: ['TA', 'SW_IN', 'TA_night'] ---
+2025-06-07 01:19:59,159 - INFO - 
+VIF Analysis:
+2025-06-07 01:19:59,248 - INFO - VIF Threshold: 5
+2025-06-07 01:19:59,251 - INFO - Initial Features:
+   Variable       VIF
+0        TA  9.228789
+2  TS_1_1_1  5.095931
+3  is_night  3.395113
+4  TA_night  3.343813
+2025-06-07 01:19:59,306 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-06-07 01:19:59,328 - INFO - Final Features:
+   Variable       VIF
+0     SW_IN  3.561733
+2  is_night  3.393365
+1  TS_1_1_1  2.461668
+3  TA_night  2.267047
+2025-06-07 01:19:59,502 - INFO - Differencing: d=0, D=0
+2025-06-07 02:03:52,032 - INFO - Evaluation Metrics for Feature Set 4:
+2025-06-07 02:03:52,108 - INFO - MAE: 2.5161
+2025-06-07 02:03:52,161 - INFO - RMSE: 3.1827
+2025-06-07 02:03:52,162 - INFO - R²: 0.5103
+2025-06-07 02:03:52,621 - INFO - 
+--- Running SARIMAX with Feature Set 5: ['TA', 'SW_IN', 'SW_IN_is_night'] ---
+2025-06-07 02:03:52,703 - INFO - 
+VIF Analysis:
+2025-06-07 02:03:52,728 - INFO - VIF Threshold: 5
+2025-06-07 02:03:52,736 - INFO - Initial Features:
+         Variable        VIF
+4  SW_IN_is_night  40.859950
+0              TA   6.328727
+3        is_night   6.062345
+2        TS_1_1_1   5.133656
+2025-06-07 02:03:52,850 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TA']
+2025-06-07 02:03:52,888 - INFO - Final Features:
+   Variable       VIF
+0     SW_IN  3.480617
+2  is_night  3.354770
+1  TS_1_1_1  1.127538
+2025-06-07 02:03:53,096 - INFO - Differencing: d=0, D=0
+2025-06-07 02:33:10,087 - INFO - Evaluation Metrics for Feature Set 5:
+2025-06-07 02:33:10,096 - INFO - MAE: 2.5851
+2025-06-07 02:33:10,098 - INFO - RMSE: 3.2657
+2025-06-07 02:33:10,098 - INFO - R²: 0.4845
+2025-06-07 02:33:10,506 - INFO - 
+--- Running SARIMAX with Feature Set 6: ['TA', 'SW_IN', 'cos_daily_1', 'sin_daily_1'] ---
+2025-06-07 02:33:10,584 - INFO - 
+VIF Analysis:
+2025-06-07 02:33:10,585 - INFO - VIF Threshold: 5
+2025-06-07 02:33:10,586 - INFO - Initial Features:
+      Variable       VIF
+0           TA  6.953083
+2     TS_1_1_1  5.863273
+3     is_night  3.677809
+4  cos_daily_1  2.046106
+5  sin_daily_1  1.241959
+2025-06-07 02:33:10,615 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-06-07 02:33:10,616 - INFO - Final Features:
+      Variable       VIF
+0        SW_IN  3.839132
+2     is_night  3.677487
+3  cos_daily_1  1.888768
+1     TS_1_1_1  1.255950
+4  sin_daily_1  1.234734
+2025-06-07 02:33:10,770 - INFO - Differencing: d=0, D=0
+2025-06-07 03:18:39,879 - INFO - Evaluation Metrics for Feature Set 6:
+2025-06-07 03:18:39,889 - INFO - MAE: 2.1417
+2025-06-07 03:18:39,890 - INFO - RMSE: 2.7974
+2025-06-07 03:18:39,891 - INFO - R²: 0.6217
+2025-06-07 03:18:40,280 - INFO - 
+--- Running SARIMAX with Feature Set 7: ['TA', 'SW_IN', 'cos_yearly_1', 'sin_yearly_1'] ---
+2025-06-07 03:18:40,345 - INFO - 
+VIF Analysis:
+2025-06-07 03:18:40,348 - INFO - VIF Threshold: 5
+2025-06-07 03:18:40,351 - INFO - Initial Features:
+       Variable        VIF
+2      TS_1_1_1  19.093061
+4  cos_yearly_1   8.206506
+0            TA   7.536130
+3      is_night   3.415163
+5  sin_yearly_1   2.331348
+2025-06-07 03:18:40,384 - INFO - 
+Removed features due to high VIF: ['TS_1_1_1']
+2025-06-07 03:18:40,386 - INFO - Final Features:
+       Variable       VIF
+1         SW_IN  3.800553
+2      is_night  3.360113
+0            TA  3.140812
+3  cos_yearly_1  2.288431
+4  sin_yearly_1  1.310044
+2025-06-07 03:18:40,507 - INFO - Differencing: d=0, D=0
+2025-06-07 03:50:09,513 - INFO - Evaluation Metrics for Feature Set 7:
+2025-06-07 03:50:09,519 - INFO - MAE: 2.5573
+2025-06-07 03:50:09,521 - INFO - RMSE: 3.2508
+2025-06-07 03:50:09,523 - INFO - R²: 0.4892
+2025-06-07 03:50:09,787 - INFO - 
+--- Running SARIMAX with Feature Set 8: ['TA', 'SW_IN', 'TA_SWIN', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_yearly_1', 'sin_yearly_1'] ---
+2025-06-07 03:50:09,916 - INFO - 
+VIF Analysis:
+2025-06-07 03:50:09,917 - INFO - VIF Threshold: 5
+2025-06-07 03:50:09,920 - INFO - Initial Features:
+         Variable        VIF
+5  SW_IN_is_night  78.391532
+2        TS_1_1_1  19.881141
+8    cos_yearly_1   9.268186
+0              TA   7.941123
+3        is_night   6.638702
+6     cos_daily_1   3.783624
+4         TA_SWIN   2.466121
+9    sin_yearly_1   2.440908
+7     sin_daily_1   1.625117
+2025-06-07 03:50:10,075 - INFO - Only whitelist items with high vif available - abort...
+2025-06-07 03:50:10,077 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1']
+2025-06-07 03:50:10,080 - INFO - Final Features:
+       Variable       VIF
+1         SW_IN  7.780349
+2      is_night  4.137450
+0            TA  3.538921
+6  cos_yearly_1  2.894985
+3       TA_SWIN  2.325655
+4   cos_daily_1  2.271085
+7  sin_yearly_1  1.346341
+5   sin_daily_1  1.291552
+2025-06-07 03:50:10,188 - INFO - Differencing: d=0, D=0
+2025-06-07 05:58:08,517 - INFO - Evaluation Metrics for Feature Set 8:
+2025-06-07 05:58:08,532 - INFO - MAE: 2.1420
+2025-06-07 05:58:08,536 - INFO - RMSE: 2.7923
+2025-06-07 05:58:08,541 - INFO - R²: 0.6231
+2025-06-07 05:58:08,986 - INFO - 
+--- Running SARIMAX with Feature Set 9: ['TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2', 'is_night'] ---
+2025-06-07 05:58:09,337 - INFO - 
+VIF Analysis:
+2025-06-07 05:58:09,338 - INFO - VIF Threshold: 5
+2025-06-07 05:58:09,340 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  79.113188
+2         TS_1_1_1  20.141204
+0               TA  17.132126
+5         TA_night   9.957468
+11    cos_yearly_1   9.438930
+3         is_night   7.070197
+4          TA_SWIN   6.868015
+7      cos_daily_1   4.000358
+12    sin_yearly_1   2.489939
+8      sin_daily_1   1.686622
+10     sin_daily_2   1.146752
+13    cos_yearly_2   1.082506
+9      cos_daily_2   1.065165
+14    sin_yearly_2   1.017541
+2025-06-07 05:58:10,681 - INFO - Only whitelist items with high vif available - abort...
+2025-06-07 05:58:10,682 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-06-07 05:58:10,685 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.257662
+1       is_night  4.334474
+2        TA_SWIN  3.547239
+3       TA_night  2.774667
+8   cos_yearly_1  2.496522
+4    cos_daily_1  2.409104
+5    sin_daily_1  1.324061
+9   sin_yearly_1  1.247168
+7    sin_daily_2  1.119854
+10  cos_yearly_2  1.066336
+6    cos_daily_2  1.062368
+11  sin_yearly_2  1.012866
+2025-06-07 05:58:10,841 - INFO - Differencing: d=0, D=0
+2025-06-07 07:31:24,562 - INFO - Evaluation Metrics for Feature Set 9:
+2025-06-07 07:31:24,577 - INFO - MAE: 2.0868
+2025-06-07 07:31:24,579 - INFO - RMSE: 2.7561
+2025-06-07 07:31:24,580 - INFO - R²: 0.6328
+2025-06-09 13:05:24,408 - INFO - === Preparing Full Dataset ===
+2025-06-09 13:05:25,120 - INFO - 
+Prepared Dataset Information:
+2025-06-09 13:05:25,120 - INFO - Shape: (26296, 15)
+2025-06-09 13:05:25,121 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-06-09 13:05:25,127 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-06-09 13:05:25,132 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===

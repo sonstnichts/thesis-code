@@ -1,0 +1,21 @@
+2025-06-06 17:35:42,533 - INFO - Starting Random Forest feature evaluation...
+2025-06-06 17:35:42,548 - INFO - 
+--- Running Random Forest with Feature Set 1: ['SW_IN', 'TS_1_1_1'] ---
+2025-06-06 17:36:28,217 - INFO - Applying MDS to TA_1_1_1 in meteorology...
+2025-06-06 17:36:28,221 - INFO - TA_1_1_1: Missing values before interpolation: 0
+2025-06-06 17:36:28,473 - INFO - TA_1_1_1_filled: Missing values after gap filling: 0
+2025-06-06 17:36:28,495 - INFO - Added interpolated values of TA_1_1_1 to flux_df.
+2025-06-06 17:36:28,495 - INFO - Applying MDS to RH_1_1_1 in meteorology...
+2025-06-06 17:36:28,497 - INFO - RH_1_1_1: Missing values before interpolation: 34
+2025-06-06 17:36:29,078 - INFO - RH_1_1_1_filled: Missing values after gap filling: 0
+2025-06-06 17:36:29,100 - INFO - Added interpolated values of RH_1_1_1 to flux_df.
+2025-06-06 17:36:29,100 - INFO - Applying MDS to WS_1_1_1 in meteorology...
+2025-06-06 17:36:29,103 - INFO - WS_1_1_1: Missing values before interpolation: 564
+2025-06-06 17:36:53,831 - INFO - WS_1_1_1_filled: Missing values after gap filling: 0
+2025-06-06 17:36:53,850 - INFO - Added interpolated values of WS_1_1_1 to flux_df.
+2025-06-06 17:36:53,850 - INFO - Applying MDS to TS_1_1_1 in soil...
+2025-06-06 17:36:53,855 - INFO - TS_1_1_1: Missing values before interpolation: 967
+2025-06-06 17:38:11,477 - INFO - TS_1_1_1_filled: Missing values after gap filling: 0
+2025-06-06 17:38:11,497 - INFO - Added interpolated values of TS_1_1_1 to flux_df.
+2025-06-06 17:38:11,497 - INFO - Assembling features...
+2025-06-06 17:38:11,497 - INFO - Feature list assembled: ['SW_IN', 'sin_hour', 'cos_hour', 'sin_day', 'cos_day', 'is_day', 'co2_flux_lag1', 'co2_flux_lag24', 'co2_flux_rolling_mean_6h', 'co2_flux_rolling_mean_24h', 'TA_1_1_1', 'temp_radiation_interaction', 'RH_1_1_1', 'WS_1_1_1']

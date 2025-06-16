@@ -1,0 +1,53 @@
+2025-06-06 15:11:32,149 - INFO - Starting Random Forest feature evaluation...
+2025-06-06 15:11:32,175 - INFO - 
+--- Running Random Forest with Feature Set 1: ['SW_IN', 'TS_1_1_1'] ---
+2025-06-06 15:18:15,751 - INFO - MAE: 2.7046
+2025-06-06 15:18:15,751 - INFO - RMSE: 3.8426
+2025-06-06 15:18:15,751 - INFO - R²: 0.5184
+2025-06-06 15:18:15,753 - INFO - 
+--- Running Random Forest with Feature Set 2: ['SW_IN', 'TS_1_1_1', 'co2_flux_lag1'] ---
+2025-06-06 15:28:12,391 - INFO - MAE: 2.0434
+2025-06-06 15:28:12,392 - INFO - RMSE: 3.2160
+2025-06-06 15:28:12,392 - INFO - R²: 0.6627
+2025-06-06 15:28:12,394 - INFO - 
+--- Running Random Forest with Feature Set 3: ['SW_IN', 'TS_1_1_1', 'co2_flux_lag1', 'co2_flux_lag24'] ---
+2025-06-06 15:40:28,354 - INFO - MAE: 2.0471
+2025-06-06 15:40:28,356 - INFO - RMSE: 3.2183
+2025-06-06 15:40:28,356 - INFO - R²: 0.6622
+2025-06-06 15:40:28,357 - INFO - 
+--- Running Random Forest with Feature Set 4: ['SW_IN', 'TS_1_1_1', 'co2_flux_rolling_mean_6h'] ---
+2025-06-06 15:50:27,949 - INFO - MAE: 2.0948
+2025-06-06 15:50:27,951 - INFO - RMSE: 3.0862
+2025-06-06 15:50:27,951 - INFO - R²: 0.6894
+2025-06-06 15:50:27,952 - INFO - 
+--- Running Random Forest with Feature Set 5: ['SW_IN', 'TS_1_1_1', 'co2_flux_rolling_mean_6h', 'co2_flux_rolling_mean_24h'] ---
+2025-06-06 16:04:04,840 - INFO - MAE: 1.9212
+2025-06-06 16:04:04,841 - INFO - RMSE: 2.9621
+2025-06-06 16:04:04,841 - INFO - R²: 0.7139
+2025-06-06 16:04:04,843 - INFO - 
+--- Running Random Forest with Feature Set 6: ['SW_IN', 'TS_1_1_1', 'sin_hour', 'cos_hour'] ---
+2025-06-06 16:11:52,226 - INFO - MAE: 2.6005
+2025-06-06 16:11:52,228 - INFO - RMSE: 3.7522
+2025-06-06 16:11:52,228 - INFO - R²: 0.5408
+2025-06-06 16:11:52,231 - INFO - 
+--- Running Random Forest with Feature Set 7: ['SW_IN', 'TS_1_1_1', 'sin_day', 'cos_day'] ---
+2025-06-06 16:21:08,815 - INFO - MAE: 2.6867
+2025-06-06 16:21:08,816 - INFO - RMSE: 3.8233
+2025-06-06 16:21:08,816 - INFO - R²: 0.5233
+2025-06-06 16:21:08,817 - INFO - 
+--- Running Random Forest with Feature Set 8: ['SW_IN', 'TS_1_1_1', 'TA_1_1_1', 'temp_radiation_interaction'] ---
+2025-06-06 16:34:29,213 - INFO - MAE: 2.6471
+2025-06-06 16:34:29,214 - INFO - RMSE: 3.8112
+2025-06-06 16:34:29,214 - INFO - R²: 0.5263
+2025-06-06 16:34:29,216 - INFO - 
+--- Running Random Forest with Feature Set 9: ['SW_IN', 'TS_1_1_1', 'co2_flux_lag1', 'co2_flux_lag24', 'sin_hour', 'cos_hour', 'sin_day', 'cos_day'] ---
+2025-06-06 16:51:57,003 - INFO - MAE: 2.0083
+2025-06-06 16:51:57,005 - INFO - RMSE: 3.1927
+2025-06-06 16:51:57,005 - INFO - R²: 0.6676
+2025-06-06 16:51:57,007 - INFO - 
+--- Running Random Forest with Feature Set 10: ['SW_IN', 'TS_1_1_1', 'co2_flux_lag1', 'co2_flux_lag24', 'co2_flux_rolling_mean_6h', 'co2_flux_rolling_mean_24h', 'TA_1_1_1', 'temp_radiation_interaction'] ---
+2025-06-06 17:19:48,567 - INFO - MAE: 1.8046
+2025-06-06 17:19:48,569 - INFO - RMSE: 2.8715
+2025-06-06 17:19:48,569 - INFO - R²: 0.7311
+2025-06-06 17:19:48,571 - INFO - 
+--- Running Random Forest with Feature Set 11: ['sin_hour', 'cos_hour', 'sin_day', 'cos_day', 'SW_IN', 'is_day', 'co2_flux_lag1', 'co2_flux_lag24', 'co2_flux_rolling_mean_6h', 'co2_flux_rolling_mean_24h', 'TA_1_1_1', 'temp_radiation_interaction', 'RH_1_1_1', 'WS_1_1_1', 'TS_1_1_1'] ---

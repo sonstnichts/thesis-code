@@ -1,0 +1,40 @@
+2025-06-06 22:33:24,222 - INFO - 
+--- Running SARIMAX with Feature Set 1: ['TA', 'SW_IN'] ---
+2025-06-06 22:33:24,264 - INFO - 
+VIF Analysis:
+2025-06-06 22:33:24,267 - INFO - VIF Threshold: 5
+2025-06-06 22:33:24,271 - INFO - Initial Features:
+   Variable       VIF
+0        TA  6.256958
+2  TS_1_1_1  5.095029
+3  is_night  3.376057
+2025-06-06 22:33:24,293 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-06-06 22:33:24,295 - INFO - Final Features:
+   Variable       VIF
+0     SW_IN  3.480617
+2  is_night  3.354770
+1  TS_1_1_1  1.127538
+2025-06-06 22:33:24,446 - INFO - Differencing: d=0, D=0
+2025-06-06 23:03:12,402 - INFO - Evaluation Metrics for Feature Set 1:
+2025-06-06 23:03:12,416 - INFO - MAE: 2.5851
+2025-06-06 23:03:12,417 - INFO - RMSE: 3.2657
+2025-06-06 23:03:12,418 - INFO - R²: 0.4845
+2025-06-06 23:03:12,783 - INFO - 
+--- Running SARIMAX with Feature Set 2: ['TA', 'SW_IN', 'TS_1_1_1'] ---
+2025-06-06 23:03:12,841 - INFO - 
+VIF Analysis:
+2025-06-06 23:03:12,842 - INFO - VIF Threshold: 5
+2025-06-06 23:03:12,843 - INFO - Initial Features:
+   Variable       VIF
+0        TA  6.256958
+2  TS_1_1_1  5.095029
+3  is_night  3.376057
+2025-06-06 23:03:12,859 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-06-06 23:03:12,864 - INFO - Final Features:
+   Variable       VIF
+0     SW_IN  3.480617
+2  is_night  3.354770
+1  TS_1_1_1  1.127538
+2025-06-06 23:03:12,993 - INFO - Differencing: d=0, D=0

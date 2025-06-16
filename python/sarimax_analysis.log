@@ -1,0 +1,3652 @@
+2025-03-04 16:49:44,498 - INFO - 
+=== Starting Analysis ===
+2025-03-04 16:49:44,501 - INFO - 
+=== Data Preparation ===
+2025-03-04 16:49:44,522 - INFO - 
+Initial Data Information:
+2025-03-04 16:49:44,522 - INFO - Shape: (11688, 1)
+2025-03-04 16:49:44,522 - INFO - Columns: ['co2_flux_filled']
+2025-03-04 16:49:44,523 - INFO - Missing Values:
+co2_flux_filled    1195
+dtype: int64
+2025-03-04 16:49:44,525 - INFO - 
+=== Adding Meteorological Data ===
+2025-03-04 16:49:44,666 - INFO - 
+=== Feature Engineering ===
+2025-03-04 16:49:44,670 - INFO - 
+After Feature Engineering Information:
+2025-03-04 16:49:44,670 - INFO - Shape: (10493, 13)
+2025-03-04 16:49:44,671 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-03-04 16:49:44,672 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_night           0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-03-04 16:49:44,672 - INFO - 
+=== Multicollinearity Check ===
+2025-03-04 16:49:44,789 - INFO - 
+VIF Analysis:
+2025-03-04 16:49:44,794 - INFO - VIF Threshold: 5
+2025-03-04 16:49:44,796 - INFO - Initial Features:
+        Variable        VIF
+0             TA  24.570024
+3       TA_night  20.429299
+1          SW_IN   5.962029
+2       is_night   5.181659
+8   cos_yearly_1   2.927851
+4    cos_daily_1   2.364220
+5    sin_daily_1   1.443749
+9   sin_yearly_1   1.333106
+7    sin_daily_2   1.119526
+6    cos_daily_2   1.048830
+10  cos_yearly_2   1.028750
+11  sin_yearly_2   1.017105
+2025-03-04 16:49:45,015 - INFO - 
+Removed features due to high VIF: ['TA', 'SW_IN']
+2025-03-04 16:49:45,029 - INFO - Final Features:
+       Variable       VIF
+1      TA_night  2.948149
+6  cos_yearly_1  2.688569
+0      is_night  1.487767
+2   cos_daily_1  1.383865
+7  sin_yearly_1  1.229362
+5   sin_daily_2  1.057403
+3   sin_daily_1  1.045142
+4   cos_daily_2  1.033670
+9  sin_yearly_2  1.006494
+8  cos_yearly_2  1.004339
+2025-03-04 16:49:45,038 - INFO - 
+=== Train/Test Split ===
+2025-03-04 16:49:45,041 - INFO - 
+=== Differencing ===
+2025-03-04 16:49:45,412 - INFO - 
+=== Model Training ===
+2025-03-04 16:49:45,416 - INFO - SARIMAX Search Space:
+2025-03-04 16:49:45,421 - INFO - Seasonality (m): 8
+2025-03-04 16:49:45,432 - INFO - p range: 0-3, q range: 0-3
+2025-03-04 16:49:45,439 - INFO - P range: 0-2, Q range: 0-2
+2025-03-04 16:49:45,445 - INFO - d: 0, D: 0
+2025-03-04 16:55:50,748 - INFO - 
+=== Final Model ===
+2025-03-04 16:55:50,751 - INFO - SARIMAX(1, 0, 0)x(1, 0, 2, 8)
+2025-03-04 16:55:50,752 - INFO - Model Parameters:
+2025-03-04 16:55:50,755 - INFO - intercept: -0.0749
+2025-03-04 16:55:50,757 - INFO - is_night: 0.7655
+2025-03-04 16:55:50,757 - INFO - TA_night: -0.0545
+2025-03-04 16:55:50,758 - INFO - cos_daily_1: 3.6881
+2025-03-04 16:55:50,759 - INFO - sin_daily_1: -1.5433
+2025-03-04 16:55:50,761 - INFO - cos_daily_2: -0.8661
+2025-03-04 16:55:50,762 - INFO - sin_daily_2: 0.9175
+2025-03-04 16:55:50,763 - INFO - cos_yearly_1: 0.5186
+2025-03-04 16:55:50,763 - INFO - sin_yearly_1: -0.7810
+2025-03-04 16:55:50,764 - INFO - cos_yearly_2: 0.3038
+2025-03-04 16:55:50,765 - INFO - sin_yearly_2: 0.3042
+2025-03-04 16:55:50,766 - INFO - ar.L1: 0.3829
+2025-03-04 16:55:50,766 - INFO - ar.S.L8: 0.8986
+2025-03-04 16:55:50,767 - INFO - ma.S.L8: -0.7209
+2025-03-04 16:55:50,768 - INFO - ma.S.L16: -0.0187
+2025-03-04 16:55:50,773 - INFO - sigma2: 6.3183
+2025-03-04 16:57:37,225 - INFO - 
+=== Starting Analysis ===
+2025-03-04 16:57:37,226 - INFO - 
+=== Data Preparation ===
+2025-03-04 16:57:37,243 - INFO - 
+Initial Data Information:
+2025-03-04 16:57:37,244 - INFO - Shape: (11688, 1)
+2025-03-04 16:57:37,244 - INFO - Columns: ['co2_flux_filled']
+2025-03-04 16:57:37,245 - INFO - Missing Values:
+co2_flux_filled    1195
+dtype: int64
+2025-03-04 16:57:37,246 - INFO - 
+=== Adding Meteorological Data ===
+2025-03-04 16:57:37,377 - INFO - 
+=== Feature Engineering ===
+2025-03-04 16:57:37,382 - INFO - 
+After Feature Engineering Information:
+2025-03-04 16:57:37,383 - INFO - Shape: (10493, 13)
+2025-03-04 16:57:37,383 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-03-04 16:57:37,384 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_night           0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-03-04 16:57:37,384 - INFO - 
+=== Multicollinearity Check ===
+2025-03-04 16:57:37,538 - INFO - 
+VIF Analysis:
+2025-03-04 16:57:37,540 - INFO - VIF Threshold: 5
+2025-03-04 16:57:37,543 - INFO - Initial Features:
+        Variable        VIF
+0             TA  24.570024
+3       TA_night  20.429299
+1          SW_IN   5.962029
+2       is_night   5.181659
+8   cos_yearly_1   2.927851
+4    cos_daily_1   2.364220
+5    sin_daily_1   1.443749
+9   sin_yearly_1   1.333106
+7    sin_daily_2   1.119526
+6    cos_daily_2   1.048830
+10  cos_yearly_2   1.028750
+11  sin_yearly_2   1.017105
+2025-03-04 16:57:37,724 - INFO - 
+Removed features due to high VIF: ['TA', 'SW_IN']
+2025-03-04 16:57:37,726 - INFO - Final Features:
+       Variable       VIF
+1      TA_night  2.948149
+6  cos_yearly_1  2.688569
+0      is_night  1.487767
+2   cos_daily_1  1.383865
+7  sin_yearly_1  1.229362
+5   sin_daily_2  1.057403
+3   sin_daily_1  1.045142
+4   cos_daily_2  1.033670
+9  sin_yearly_2  1.006494
+8  cos_yearly_2  1.004339
+2025-03-04 16:57:37,731 - INFO - 
+=== Train/Test Split ===
+2025-03-04 16:57:37,733 - INFO - 
+=== Differencing ===
+2025-03-04 16:57:38,081 - INFO - 
+=== Model Training ===
+2025-03-04 16:57:38,087 - INFO - SARIMAX Search Space:
+2025-03-04 16:57:38,092 - INFO - Seasonality (m): 8
+2025-03-04 16:57:38,094 - INFO - p range: 0-3, q range: 0-3
+2025-03-04 16:57:38,096 - INFO - P range: 0-2, Q range: 0-2
+2025-03-04 16:57:38,108 - INFO - d: 0, D: 0
+2025-03-04 17:03:39,998 - INFO - 
+=== Final Model ===
+2025-03-04 17:03:40,001 - INFO - SARIMAX(1, 0, 0)x(1, 0, 2, 8)
+2025-03-04 17:03:40,002 - INFO - Model Parameters:
+2025-03-04 17:03:40,035 - INFO - intercept: -0.0749
+2025-03-04 17:03:40,042 - INFO - is_night: 0.7655
+2025-03-04 17:03:40,043 - INFO - TA_night: -0.0545
+2025-03-04 17:03:40,044 - INFO - cos_daily_1: 3.6881
+2025-03-04 17:03:40,045 - INFO - sin_daily_1: -1.5433
+2025-03-04 17:03:40,046 - INFO - cos_daily_2: -0.8661
+2025-03-04 17:03:40,049 - INFO - sin_daily_2: 0.9175
+2025-03-04 17:03:40,051 - INFO - cos_yearly_1: 0.5186
+2025-03-04 17:03:40,052 - INFO - sin_yearly_1: -0.7810
+2025-03-04 17:03:40,054 - INFO - cos_yearly_2: 0.3038
+2025-03-04 17:03:40,059 - INFO - sin_yearly_2: 0.3042
+2025-03-04 17:03:40,062 - INFO - ar.L1: 0.3829
+2025-03-04 17:03:40,063 - INFO - ar.S.L8: 0.8986
+2025-03-04 17:03:40,064 - INFO - ma.S.L8: -0.7209
+2025-03-04 17:03:40,069 - INFO - ma.S.L16: -0.0187
+2025-03-04 17:03:40,073 - INFO - sigma2: 6.3183
+2025-03-04 17:31:17,400 - INFO - 
+=== Starting Analysis ===
+2025-03-04 17:31:17,401 - INFO - 
+=== Data Preparation ===
+2025-03-04 17:31:17,421 - INFO - 
+Initial Data Information:
+2025-03-04 17:31:17,421 - INFO - Shape: (11688, 1)
+2025-03-04 17:31:17,421 - INFO - Columns: ['co2_flux_filled']
+2025-03-04 17:31:17,422 - INFO - Missing Values:
+co2_flux_filled    1195
+dtype: int64
+2025-03-04 17:31:17,424 - INFO - 
+=== Adding Meteorological Data ===
+2025-03-04 17:31:17,605 - INFO - 
+=== Feature Engineering ===
+2025-03-04 17:31:17,608 - INFO - 
+After Feature Engineering Information:
+2025-03-04 17:31:17,609 - INFO - Shape: (10493, 15)
+2025-03-04 17:31:17,609 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-03-04 17:31:17,610 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-03-04 17:31:17,610 - INFO - 
+=== Multicollinearity Check ===
+2025-03-04 17:31:17,707 - INFO - 
+VIF Analysis:
+2025-03-04 17:31:17,710 - INFO - VIF Threshold: 5
+2025-03-04 17:31:17,712 - INFO - Initial Features:
+          Variable         VIF
+1            SW_IN  118.725885
+5   SW_IN_is_night   73.274794
+0               TA   13.034747
+4         TA_night    9.964044
+3          TA_SWIN    7.200667
+2         is_night    6.968712
+6      cos_daily_1    4.037213
+10    cos_yearly_1    3.224084
+7      sin_daily_1    1.949218
+11    sin_yearly_1    1.355278
+9      sin_daily_2    1.184307
+12    cos_yearly_2    1.072405
+8      cos_daily_2    1.049399
+13    sin_yearly_2    1.020652
+2025-03-04 17:31:18,167 - INFO - 
+Removed features due to high VIF: ['SW_IN', 'TA', 'SW_IN_is_night']
+2025-03-04 17:31:18,169 - INFO - Final Features:
+        Variable       VIF
+0       is_night  2.702273
+2       TA_night  2.573709
+7   cos_yearly_1  2.493878
+3    cos_daily_1  2.129431
+1        TA_SWIN  1.699132
+4    sin_daily_1  1.232700
+8   sin_yearly_1  1.151634
+6    sin_daily_2  1.072167
+9   cos_yearly_2  1.058411
+5    cos_daily_2  1.040852
+10  sin_yearly_2  1.005088
+2025-03-04 17:31:18,173 - INFO - 
+=== Train/Test Split ===
+2025-03-04 17:31:18,177 - INFO - 
+=== Differencing ===
+2025-03-04 17:31:18,491 - INFO - 
+=== Model Training ===
+2025-03-04 17:31:18,493 - INFO - SARIMAX Search Space:
+2025-03-04 17:31:18,494 - INFO - Seasonality (m): 8
+2025-03-04 17:31:18,495 - INFO - p range: 0-3, q range: 0-3
+2025-03-04 17:31:18,497 - INFO - P range: 0-2, Q range: 0-2
+2025-03-04 17:31:18,498 - INFO - d: 0, D: 0
+2025-03-04 17:38:16,992 - INFO - 
+=== Starting Analysis ===
+2025-03-04 17:38:16,993 - INFO - 
+=== Data Preparation ===
+2025-03-04 17:38:17,011 - INFO - 
+Initial Data Information:
+2025-03-04 17:38:17,011 - INFO - Shape: (11688, 1)
+2025-03-04 17:38:17,012 - INFO - Columns: ['co2_flux_filled']
+2025-03-04 17:38:17,013 - INFO - Missing Values:
+co2_flux_filled    1195
+dtype: int64
+2025-03-04 17:38:17,014 - INFO - 
+=== Adding Meteorological Data ===
+2025-03-04 17:38:17,181 - INFO - 
+=== Feature Engineering ===
+2025-03-04 17:38:17,185 - INFO - 
+After Feature Engineering Information:
+2025-03-04 17:38:17,185 - INFO - Shape: (10493, 15)
+2025-03-04 17:38:17,186 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-03-04 17:38:17,187 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-03-04 17:38:17,188 - INFO - 
+=== Multicollinearity Check ===
+2025-03-04 17:38:17,279 - INFO - 
+VIF Analysis:
+2025-03-04 17:38:17,283 - INFO - VIF Threshold: 5
+2025-03-04 17:38:17,286 - INFO - Initial Features:
+          Variable         VIF
+1            SW_IN  118.725885
+5   SW_IN_is_night   73.274794
+0               TA   13.034747
+4         TA_night    9.964044
+3          TA_SWIN    7.200667
+2         is_night    6.968712
+6      cos_daily_1    4.037213
+10    cos_yearly_1    3.224084
+7      sin_daily_1    1.949218
+11    sin_yearly_1    1.355278
+9      sin_daily_2    1.184307
+12    cos_yearly_2    1.072405
+8      cos_daily_2    1.049399
+13    sin_yearly_2    1.020652
+2025-03-04 17:38:17,525 - INFO - 
+Removed features due to high VIF: ['SW_IN', 'TA', 'SW_IN_is_night']
+2025-03-04 17:38:17,528 - INFO - Final Features:
+        Variable       VIF
+0       is_night  2.702273
+2       TA_night  2.573709
+7   cos_yearly_1  2.493878
+3    cos_daily_1  2.129431
+1        TA_SWIN  1.699132
+4    sin_daily_1  1.232700
+8   sin_yearly_1  1.151634
+6    sin_daily_2  1.072167
+9   cos_yearly_2  1.058411
+5    cos_daily_2  1.040852
+10  sin_yearly_2  1.005088
+2025-03-04 17:38:17,537 - INFO - 
+=== Train/Test Split ===
+2025-03-04 17:38:17,546 - INFO - 
+=== Differencing ===
+2025-03-04 17:38:17,962 - INFO - 
+=== Model Training ===
+2025-03-04 17:38:17,963 - INFO - SARIMAX Search Space:
+2025-03-04 17:38:17,964 - INFO - Seasonality (m): 8
+2025-03-04 17:38:17,965 - INFO - p range: 0-3, q range: 0-3
+2025-03-04 17:38:17,966 - INFO - P range: 0-2, Q range: 0-2
+2025-03-04 17:38:17,967 - INFO - d: 0, D: 0
+2025-03-04 17:39:10,400 - INFO - 
+=== Starting Analysis ===
+2025-03-04 17:39:10,401 - INFO - 
+=== Data Preparation ===
+2025-03-04 17:39:10,416 - INFO - 
+Initial Data Information:
+2025-03-04 17:39:10,417 - INFO - Shape: (11688, 1)
+2025-03-04 17:39:10,417 - INFO - Columns: ['co2_flux_filled']
+2025-03-04 17:39:10,419 - INFO - Missing Values:
+co2_flux_filled    1195
+dtype: int64
+2025-03-04 17:39:10,420 - INFO - 
+=== Adding Meteorological Data ===
+2025-03-04 17:39:10,545 - INFO - 
+=== Feature Engineering ===
+2025-03-04 17:39:10,549 - INFO - 
+After Feature Engineering Information:
+2025-03-04 17:39:10,550 - INFO - Shape: (10493, 15)
+2025-03-04 17:39:10,550 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-03-04 17:39:10,552 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-03-04 17:39:10,552 - INFO - 
+=== Multicollinearity Check ===
+2025-03-04 17:39:10,650 - INFO - 
+VIF Analysis:
+2025-03-04 17:39:10,651 - INFO - VIF Threshold: 5
+2025-03-04 17:39:10,657 - INFO - Initial Features:
+          Variable         VIF
+1            SW_IN  118.725885
+5   SW_IN_is_night   73.274794
+0               TA   13.034747
+4         TA_night    9.964044
+3          TA_SWIN    7.200667
+2         is_night    6.968712
+6      cos_daily_1    4.037213
+10    cos_yearly_1    3.224084
+7      sin_daily_1    1.949218
+11    sin_yearly_1    1.355278
+9      sin_daily_2    1.184307
+12    cos_yearly_2    1.072405
+8      cos_daily_2    1.049399
+13    sin_yearly_2    1.020652
+2025-03-04 17:39:10,855 - INFO - 
+Removed features due to high VIF: ['SW_IN', 'TA', 'SW_IN_is_night']
+2025-03-04 17:39:10,861 - INFO - Final Features:
+        Variable       VIF
+0       is_night  2.702273
+2       TA_night  2.573709
+7   cos_yearly_1  2.493878
+3    cos_daily_1  2.129431
+1        TA_SWIN  1.699132
+4    sin_daily_1  1.232700
+8   sin_yearly_1  1.151634
+6    sin_daily_2  1.072167
+9   cos_yearly_2  1.058411
+5    cos_daily_2  1.040852
+10  sin_yearly_2  1.005088
+2025-03-04 17:39:10,863 - INFO - 
+=== Train/Test Split ===
+2025-03-04 17:39:10,870 - INFO - 
+=== Differencing ===
+2025-03-04 17:39:11,167 - INFO - 
+=== Model Training ===
+2025-03-04 17:39:11,170 - INFO - SARIMAX Search Space:
+2025-03-04 17:39:11,175 - INFO - Seasonality (m): 8
+2025-03-04 17:39:11,176 - INFO - p range: 0-3, q range: 0-3
+2025-03-04 17:39:11,179 - INFO - P range: 0-2, Q range: 0-2
+2025-03-04 17:39:11,180 - INFO - d: 0, D: 0
+2025-03-04 17:43:09,623 - INFO - 
+=== Starting Analysis ===
+2025-03-04 17:43:09,624 - INFO - 
+=== Data Preparation ===
+2025-03-04 17:43:09,642 - INFO - 
+Initial Data Information:
+2025-03-04 17:43:09,643 - INFO - Shape: (11688, 1)
+2025-03-04 17:43:09,643 - INFO - Columns: ['co2_flux_filled']
+2025-03-04 17:43:09,644 - INFO - Missing Values:
+co2_flux_filled    1195
+dtype: int64
+2025-03-04 17:43:09,645 - INFO - 
+=== Adding Meteorological Data ===
+2025-03-04 17:43:09,792 - INFO - 
+=== Feature Engineering ===
+2025-03-04 17:43:09,797 - INFO - 
+After Feature Engineering Information:
+2025-03-04 17:43:09,797 - INFO - Shape: (10493, 15)
+2025-03-04 17:43:09,797 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-03-04 17:43:09,799 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-03-04 17:43:09,800 - INFO - 
+=== Multicollinearity Check ===
+2025-03-04 17:43:09,998 - INFO - 
+VIF Analysis:
+2025-03-04 17:43:09,999 - INFO - VIF Threshold: 5
+2025-03-04 17:43:10,001 - INFO - Initial Features:
+          Variable         VIF
+1            SW_IN  118.725885
+5   SW_IN_is_night   73.274794
+0               TA   13.034747
+4         TA_night    9.964044
+3          TA_SWIN    7.200667
+2         is_night    6.968712
+6      cos_daily_1    4.037213
+10    cos_yearly_1    3.224084
+7      sin_daily_1    1.949218
+11    sin_yearly_1    1.355278
+9      sin_daily_2    1.184307
+12    cos_yearly_2    1.072405
+8      cos_daily_2    1.049399
+13    sin_yearly_2    1.020652
+2025-03-04 17:43:10,005 - INFO - whitelist['SW_IN']
+2025-03-04 17:43:10,191 - INFO - 
+Removed features due to high VIF: ['SW_IN', 'TA', 'SW_IN_is_night']
+2025-03-04 17:43:10,194 - INFO - Final Features:
+        Variable       VIF
+0       is_night  2.702273
+2       TA_night  2.573709
+7   cos_yearly_1  2.493878
+3    cos_daily_1  2.129431
+1        TA_SWIN  1.699132
+4    sin_daily_1  1.232700
+8   sin_yearly_1  1.151634
+6    sin_daily_2  1.072167
+9   cos_yearly_2  1.058411
+5    cos_daily_2  1.040852
+10  sin_yearly_2  1.005088
+2025-03-04 17:43:10,201 - INFO - 
+=== Train/Test Split ===
+2025-03-04 17:43:10,207 - INFO - 
+=== Differencing ===
+2025-03-04 17:43:10,479 - INFO - 
+=== Model Training ===
+2025-03-04 17:43:10,480 - INFO - SARIMAX Search Space:
+2025-03-04 17:43:10,481 - INFO - Seasonality (m): 8
+2025-03-04 17:43:10,482 - INFO - p range: 0-3, q range: 0-3
+2025-03-04 17:43:10,482 - INFO - P range: 0-2, Q range: 0-2
+2025-03-04 17:43:10,483 - INFO - d: 0, D: 0
+
+### Here starts the first successful approach
+
+2025-03-04 17:47:03,754 - INFO - 
+=== Starting Analysis ===
+2025-03-04 17:47:03,755 - INFO - 
+=== Data Preparation ===
+2025-03-04 17:47:03,768 - INFO - 
+Initial Data Information:
+2025-03-04 17:47:03,768 - INFO - Shape: (11688, 1)
+2025-03-04 17:47:03,769 - INFO - Columns: ['co2_flux_filled']
+2025-03-04 17:47:03,770 - INFO - Missing Values:
+co2_flux_filled    1195
+dtype: int64
+2025-03-04 17:47:03,771 - INFO - 
+=== Adding Meteorological Data ===
+2025-03-04 17:47:03,901 - INFO - 
+=== Feature Engineering ===
+2025-03-04 17:47:03,905 - INFO - 
+After Feature Engineering Information:
+2025-03-04 17:47:03,905 - INFO - Shape: (10493, 15)
+2025-03-04 17:47:03,905 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-03-04 17:47:03,907 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-03-04 17:47:03,907 - INFO - 
+=== Multicollinearity Check ===
+2025-03-04 17:47:04,080 - INFO - 
+VIF Analysis:
+2025-03-04 17:47:04,082 - INFO - VIF Threshold: 5
+2025-03-04 17:47:04,084 - INFO - Initial Features:
+          Variable         VIF
+1            SW_IN  118.725885
+5   SW_IN_is_night   73.274794
+0               TA   13.034747
+4         TA_night    9.964044
+3          TA_SWIN    7.200667
+2         is_night    6.968712
+6      cos_daily_1    4.037213
+10    cos_yearly_1    3.224084
+7      sin_daily_1    1.949218
+11    sin_yearly_1    1.355278
+9      sin_daily_2    1.184307
+12    cos_yearly_2    1.072405
+8      cos_daily_2    1.049399
+13    sin_yearly_2    1.020652
+2025-03-04 17:47:04,086 - INFO - whitelist['SW_IN']
+2025-03-04 17:47:04,281 - INFO - 
+Removed features due to high VIF: ['SW_IN', 'TA', 'SW_IN_is_night']
+2025-03-04 17:47:04,283 - INFO - Final Features:
+        Variable       VIF
+0       is_night  2.702273
+2       TA_night  2.573709
+7   cos_yearly_1  2.493878
+3    cos_daily_1  2.129431
+1        TA_SWIN  1.699132
+4    sin_daily_1  1.232700
+8   sin_yearly_1  1.151634
+6    sin_daily_2  1.072167
+9   cos_yearly_2  1.058411
+5    cos_daily_2  1.040852
+10  sin_yearly_2  1.005088
+2025-03-04 17:47:04,291 - INFO - 
+=== Train/Test Split ===
+2025-03-04 17:47:04,294 - INFO - 
+=== Differencing ===
+2025-03-04 17:47:04,654 - INFO - 
+=== Model Training ===
+2025-03-04 17:47:04,655 - INFO - SARIMAX Search Space:
+2025-03-04 17:47:04,656 - INFO - Seasonality (m): 8
+2025-03-04 17:47:04,657 - INFO - p range: 0-3, q range: 0-3
+2025-03-04 17:47:04,657 - INFO - P range: 0-2, Q range: 0-2
+2025-03-04 17:47:04,659 - INFO - d: 0, D: 0
+2025-03-04 17:48:15,069 - INFO - 
+=== Starting Analysis ===
+2025-03-04 17:48:15,070 - INFO - 
+=== Data Preparation ===
+2025-03-04 17:48:15,081 - INFO - 
+Initial Data Information:
+2025-03-04 17:48:15,082 - INFO - Shape: (11688, 1)
+2025-03-04 17:48:15,082 - INFO - Columns: ['co2_flux_filled']
+2025-03-04 17:48:15,083 - INFO - Missing Values:
+co2_flux_filled    1195
+dtype: int64
+2025-03-04 17:48:15,084 - INFO - 
+=== Adding Meteorological Data ===
+2025-03-04 17:48:15,223 - INFO - 
+=== Feature Engineering ===
+2025-03-04 17:48:15,228 - INFO - 
+After Feature Engineering Information:
+2025-03-04 17:48:15,228 - INFO - Shape: (10493, 15)
+2025-03-04 17:48:15,228 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-03-04 17:48:15,230 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-03-04 17:48:15,230 - INFO - 
+=== Multicollinearity Check ===
+2025-03-04 17:48:15,353 - INFO - 
+VIF Analysis:
+2025-03-04 17:48:15,354 - INFO - VIF Threshold: 5
+2025-03-04 17:48:15,357 - INFO - Initial Features:
+          Variable        VIF
+5   SW_IN_is_night  73.274794
+0               TA  13.034747
+4         TA_night   9.964044
+3          TA_SWIN   7.200667
+2         is_night   6.968712
+6      cos_daily_1   4.037213
+10    cos_yearly_1   3.224084
+7      sin_daily_1   1.949218
+11    sin_yearly_1   1.355278
+9      sin_daily_2   1.184307
+12    cos_yearly_2   1.072405
+8      cos_daily_2   1.049399
+13    sin_yearly_2   1.020652
+2025-03-04 17:48:15,358 - INFO - whitelist['SW_IN']
+2025-03-04 17:48:15,523 - INFO - Only whitelist items with high vif available - abort...
+2025-03-04 17:48:15,527 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TA']
+2025-03-04 17:48:15,528 - INFO - Final Features:
+        Variable        VIF
+0          SW_IN  10.041270
+1       is_night   4.479059
+2        TA_SWIN   3.637978
+3       TA_night   2.821689
+8   cos_yearly_1   2.562855
+4    cos_daily_1   2.499749
+5    sin_daily_1   1.449375
+9   sin_yearly_1   1.236248
+7    sin_daily_2   1.150918
+10  cos_yearly_2   1.069392
+6    cos_daily_2   1.047018
+11  sin_yearly_2   1.016447
+2025-03-04 17:48:15,531 - INFO - 
+=== Train/Test Split ===
+2025-03-04 17:48:15,537 - INFO - 
+=== Differencing ===
+2025-03-04 17:48:15,926 - INFO - 
+=== Model Training ===
+2025-03-04 17:48:15,928 - INFO - SARIMAX Search Space:
+2025-03-04 17:48:15,935 - INFO - Seasonality (m): 8
+2025-03-04 17:48:15,936 - INFO - p range: 0-3, q range: 0-3
+2025-03-04 17:48:15,937 - INFO - P range: 0-2, Q range: 0-2
+2025-03-04 17:48:15,938 - INFO - d: 0, D: 0
+2025-03-04 18:08:14,941 - INFO - 
+=== Final Model ===
+2025-03-04 18:08:14,943 - INFO - SARIMAX(2, 0, 1)x(2, 0, 1, 8)
+2025-03-04 18:08:14,943 - INFO - Model Parameters:
+2025-03-04 18:08:14,944 - INFO - intercept: -0.0089
+2025-03-04 18:08:14,944 - INFO - SW_IN: -2.3342
+2025-03-04 18:08:14,945 - INFO - is_night: 1.2181
+2025-03-04 18:08:14,945 - INFO - TA_SWIN: 0.6235
+2025-03-04 18:08:14,946 - INFO - TA_night: 1.3401
+2025-03-04 18:08:14,946 - INFO - cos_daily_1: 2.0235
+2025-03-04 18:08:14,947 - INFO - sin_daily_1: -0.4113
+2025-03-04 18:08:14,947 - INFO - cos_daily_2: -0.5307
+2025-03-04 18:08:14,947 - INFO - sin_daily_2: 0.4089
+2025-03-04 18:08:14,948 - INFO - cos_yearly_1: 0.0863
+2025-03-04 18:08:14,948 - INFO - sin_yearly_1: -0.1143
+2025-03-04 18:08:14,948 - INFO - cos_yearly_2: 0.1003
+2025-03-04 18:08:14,949 - INFO - sin_yearly_2: 0.2539
+2025-03-04 18:08:14,949 - INFO - ar.L1: 1.2593
+2025-03-04 18:08:14,949 - INFO - ar.L2: -0.3007
+2025-03-04 18:08:14,950 - INFO - ma.L1: -0.9209
+2025-03-04 18:08:14,950 - INFO - ar.S.L8: 0.8665
+2025-03-04 18:08:14,950 - INFO - ar.S.L16: -0.0206
+2025-03-04 18:08:14,950 - INFO - ma.S.L8: -0.7225
+2025-03-04 18:08:14,951 - INFO - sigma2: 5.4061
+2025-05-06 15:38:37,604 - INFO - Starting SARIMAX analysis...
+2025-05-06 15:38:37,605 - ERROR - Error in main execution: name 'flux_df' is not defined
+2025-05-06 17:24:39,938 - ERROR - DataFrame 'flux_df' wurde nicht im globalen Scope gefunden.
+2025-05-06 17:24:39,941 - ERROR - Bitte stellen Sie diesen DataFrame (Ergebnis Ihrer Notebook-Datenaufbereitung) bereit.
+2025-05-06 17:24:39,943 - ERROR - Er sollte 'co2_flux_filled' und Rohversionen von 'TA_1_1_1', 'SW_IN', 'TS_1_1_1' etc. enthalten.
+2025-05-06 17:24:40,490 - INFO - SARIMAX Modell geladen von sarimax_model_20250506_145820.pkl
+2025-05-06 17:24:40,498 - INFO - Vom SARIMAX-Modell erwartete exogene Variablen: ['SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 13:29:59,346 - INFO - 
+=== Starting Analysis ===
+2025-05-07 13:29:59,347 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-07 13:29:59,348 - INFO - Total datapoints before resampling: 140422
+2025-05-07 13:29:59,358 - INFO - Datapoints with any NaN before resampling: 23228 (16.54%)
+2025-05-07 13:29:59,358 - INFO - 
+Temporal distribution of NaN values before resampling:
+2025-05-07 13:29:59,363 - INFO - 
+NaN counts by year before resampling:
+2025-05-07 13:29:59,363 - INFO - Timestamp
+2015    2502
+2016    3513
+2017    3207
+2018    2474
+2019    1962
+2020    2513
+2021    2159
+2022    2127
+2023    2771
+dtype: int64
+2025-05-07 13:29:59,366 - INFO - 
+NaN counts by month before resampling:
+2025-05-07 13:29:59,367 - INFO - Timestamp
+1     1868
+2     1334
+3     1603
+4     1847
+5     1950
+6     2105
+7     1977
+8     2089
+9     2349
+10    1765
+11    2012
+12    2329
+dtype: int64
+2025-05-07 13:29:59,368 - INFO - 
+NaN counts by hour before resampling:
+2025-05-07 13:29:59,369 - INFO - Timestamp
+0     1206
+1     1239
+2     1360
+3     1355
+4     1362
+5     1294
+6     1095
+7      899
+8      845
+9     1017
+10    1120
+11    1125
+12    1053
+13     926
+14     739
+15     529
+16     500
+17     554
+18     554
+19     636
+20     782
+21     890
+22    1024
+23    1124
+dtype: int64
+2025-05-07 13:29:59,370 - INFO - 
+Longest NaN sequences before resampling:
+2025-05-07 13:29:59,370 - INFO - 
+Tau: No NaN values found
+2025-05-07 13:29:59,370 - INFO - 
+qc_Tau: No NaN values found
+2025-05-07 13:29:59,371 - INFO - 
+H: No NaN values found
+2025-05-07 13:29:59,371 - INFO - 
+qc_H: No NaN values found
+2025-05-07 13:29:59,372 - INFO - 
+qc_LE: No NaN values found
+2025-05-07 13:29:59,388 - INFO - 
+co2_flux:
+2025-05-07 13:29:59,389 - INFO - Longest sequence: 350 points
+2025-05-07 13:29:59,389 - INFO - From: 2016-12-13 12:00:00
+2025-05-07 13:29:59,389 - INFO - To: 2016-12-21 19:00:00
+2025-05-07 13:29:59,390 - INFO - Duration: 8 days 07:00:00
+2025-05-07 13:29:59,391 - INFO - 
+qc_co2_flux: No NaN values found
+2025-05-07 13:29:59,391 - INFO - 
+h2o_flux: No NaN values found
+2025-05-07 13:29:59,392 - INFO - 
+qc_h2o_flux: No NaN values found
+2025-05-07 13:29:59,393 - INFO - 
+co2_mole_fraction: No NaN values found
+2025-05-07 13:29:59,394 - INFO - 
+h2o_mole_fraction: No NaN values found
+2025-05-07 13:29:59,395 - INFO - 
+u*: No NaN values found
+2025-05-07 13:29:59,396 - INFO - 
+L: No NaN values found
+2025-05-07 13:29:59,397 - INFO - 
+u_var: No NaN values found
+2025-05-07 13:29:59,398 - INFO - 
+v_var: No NaN values found
+2025-05-07 13:29:59,399 - INFO - 
+w_var: No NaN values found
+2025-05-07 13:29:59,400 - INFO - 
+ts_var: No NaN values found
+2025-05-07 13:29:59,401 - INFO - 
+LE: No NaN values found
+2025-05-07 13:29:59,401 - INFO - 
+SW_IN: No NaN values found
+2025-05-07 13:29:59,444 - INFO - 
+co2_flux_clean:
+2025-05-07 13:29:59,444 - INFO - Longest sequence: 352 points
+2025-05-07 13:29:59,445 - INFO - From: 2016-12-13 12:00:00
+2025-05-07 13:29:59,445 - INFO - To: 2016-12-21 20:00:00
+2025-05-07 13:29:59,446 - INFO - Duration: 8 days 08:00:00
+2025-05-07 13:29:59,447 - INFO - 
+co2_flux_lin: No NaN values found
+2025-05-07 13:29:59,448 - INFO - 
+co2_flux_filled: No NaN values found
+2025-05-07 13:29:59,449 - INFO - 
+TA_1_1_1: No NaN values found
+2025-05-07 13:29:59,450 - INFO - 
+RH_1_1_1: No NaN values found
+2025-05-07 13:29:59,450 - INFO - 
+WS_1_1_1: No NaN values found
+2025-05-07 13:29:59,451 - INFO - 
+TS_1_1_1: No NaN values found
+2025-05-07 13:29:59,613 - INFO - 
+NaN correlation between variables before resampling:
+2025-05-07 13:29:59,614 - INFO -                    Tau  qc_Tau   H  qc_H  qc_LE  co2_flux  qc_co2_flux  \
+Tau                NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_Tau             NaN     NaN NaN   NaN    NaN       NaN          NaN   
+H                  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_H               NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_LE              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux           NaN     NaN NaN   NaN    NaN  1.000000          NaN   
+qc_co2_flux        NaN     NaN NaN   NaN    NaN       NaN          NaN   
+h2o_flux           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_h2o_flux        NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_mole_fraction  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+h2o_mole_fraction  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+u*                 NaN     NaN NaN   NaN    NaN       NaN          NaN   
+L                  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+u_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+v_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+w_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+ts_var             NaN     NaN NaN   NaN    NaN       NaN          NaN   
+LE                 NaN     NaN NaN   NaN    NaN       NaN          NaN   
+SW_IN              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux_clean     NaN     NaN NaN   NaN    NaN  0.628744          NaN   
+co2_flux_lin       NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux_filled    NaN     NaN NaN   NaN    NaN       NaN          NaN   
+TA_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+RH_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+WS_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+TS_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+
+                   h2o_flux  qc_h2o_flux  co2_mole_fraction  ...  ts_var  LE  \
+Tau                     NaN          NaN                NaN  ...     NaN NaN   
+qc_Tau                  NaN          NaN                NaN  ...     NaN NaN   
+H                       NaN          NaN                NaN  ...     NaN NaN   
+qc_H                    NaN          NaN                NaN  ...     NaN NaN   
+qc_LE                   NaN          NaN                NaN  ...     NaN NaN   
+co2_flux                NaN          NaN                NaN  ...     NaN NaN   
+qc_co2_flux             NaN          NaN                NaN  ...     NaN NaN   
+h2o_flux                NaN          NaN                NaN  ...     NaN NaN   
+qc_h2o_flux             NaN          NaN                NaN  ...     NaN NaN   
+co2_mole_fraction       NaN          NaN                NaN  ...     NaN NaN   
+h2o_mole_fraction       NaN          NaN                NaN  ...     NaN NaN   
+u*                      NaN          NaN                NaN  ...     NaN NaN   
+L                       NaN          NaN                NaN  ...     NaN NaN   
+u_var                   NaN          NaN                NaN  ...     NaN NaN   
+v_var                   NaN          NaN                NaN  ...     NaN NaN   
+w_var                   NaN          NaN                NaN  ...     NaN NaN   
+ts_var                  NaN          NaN                NaN  ...     NaN NaN   
+LE                      NaN          NaN                NaN  ...     NaN NaN   
+SW_IN                   NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_clean          NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_lin            NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_filled         NaN          NaN                NaN  ...     NaN NaN   
+TA_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+RH_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+WS_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+TS_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+
+                   SW_IN  co2_flux_clean  co2_flux_lin  co2_flux_filled  \
+Tau                  NaN             NaN           NaN              NaN   
+qc_Tau               NaN             NaN           NaN              NaN   
+H                    NaN             NaN           NaN              NaN   
+qc_H                 NaN             NaN           NaN              NaN   
+qc_LE                NaN             NaN           NaN              NaN   
+co2_flux             NaN        0.628744           NaN              NaN   
+qc_co2_flux          NaN             NaN           NaN              NaN   
+h2o_flux             NaN             NaN           NaN              NaN   
+qc_h2o_flux          NaN             NaN           NaN              NaN   
+co2_mole_fraction    NaN             NaN           NaN              NaN   
+h2o_mole_fraction    NaN             NaN           NaN              NaN   
+u*                   NaN             NaN           NaN              NaN   
+L                    NaN             NaN           NaN              NaN   
+u_var                NaN             NaN           NaN              NaN   
+v_var                NaN             NaN           NaN              NaN   
+w_var                NaN             NaN           NaN              NaN   
+ts_var               NaN             NaN           NaN              NaN   
+LE                   NaN             NaN           NaN              NaN   
+SW_IN                NaN             NaN           NaN              NaN   
+co2_flux_clean       NaN        1.000000           NaN              NaN   
+co2_flux_lin         NaN             NaN           NaN              NaN   
+co2_flux_filled      NaN             NaN           NaN              NaN   
+TA_1_1_1             NaN             NaN           NaN              NaN   
+RH_1_1_1             NaN             NaN           NaN              NaN   
+WS_1_1_1             NaN             NaN           NaN              NaN   
+TS_1_1_1             NaN             NaN           NaN              NaN   
+
+                   TA_1_1_1  RH_1_1_1  WS_1_1_1  TS_1_1_1  
+Tau                     NaN       NaN       NaN       NaN  
+qc_Tau                  NaN       NaN       NaN       NaN  
+H                       NaN       NaN       NaN       NaN  
+qc_H                    NaN       NaN       NaN       NaN  
+qc_LE                   NaN       NaN       NaN       NaN  
+co2_flux                NaN       NaN       NaN       NaN  
+qc_co2_flux             NaN       NaN       NaN       NaN  
+h2o_flux                NaN       NaN       NaN       NaN  
+qc_h2o_flux             NaN       NaN       NaN       NaN  
+co2_mole_fraction       NaN       NaN       NaN       NaN  
+h2o_mole_fraction       NaN       NaN       NaN       NaN  
+u*                      NaN       NaN       NaN       NaN  
+L                       NaN       NaN       NaN       NaN  
+u_var                   NaN       NaN       NaN       NaN  
+v_var                   NaN       NaN       NaN       NaN  
+w_var                   NaN       NaN       NaN       NaN  
+ts_var                  NaN       NaN       NaN       NaN  
+LE                      NaN       NaN       NaN       NaN  
+SW_IN                   NaN       NaN       NaN       NaN  
+co2_flux_clean          NaN       NaN       NaN       NaN  
+co2_flux_lin            NaN       NaN       NaN       NaN  
+co2_flux_filled         NaN       NaN       NaN       NaN  
+TA_1_1_1                NaN       NaN       NaN       NaN  
+RH_1_1_1                NaN       NaN       NaN       NaN  
+WS_1_1_1                NaN       NaN       NaN       NaN  
+TS_1_1_1                NaN       NaN       NaN       NaN  
+
+[26 rows x 26 columns]
+2025-05-07 13:30:00,037 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-07 13:30:00,037 - INFO - Total datapoints after resampling: 26296
+2025-05-07 13:30:00,040 - INFO - Datapoints with any NaN after resampling: 3536 (13.45%)
+2025-05-07 13:30:00,040 - INFO - 
+Temporal distribution of NaN values after resampling:
+2025-05-07 13:30:00,042 - INFO - 
+NaN counts by year after resampling:
+2025-05-07 13:30:00,042 - INFO - Timestamp
+2015    343
+2016    496
+2017    426
+2018    346
+2019    379
+2020    160
+2021    759
+2022    370
+2023    257
+dtype: int64
+2025-05-07 13:30:00,044 - INFO - 
+NaN counts by month after resampling:
+2025-05-07 13:30:00,044 - INFO - Timestamp
+1     273
+2     139
+3     290
+4     363
+5     233
+6     190
+7     280
+8     404
+9     238
+10    286
+11    420
+12    420
+dtype: int64
+2025-05-07 13:30:00,045 - INFO - 
+NaN counts by hour after resampling:
+2025-05-07 13:30:00,045 - INFO - Timestamp
+0     502
+3     644
+6     449
+9     429
+12    362
+15    361
+18    373
+21    416
+dtype: int64
+2025-05-07 13:30:00,046 - INFO - 
+Longest NaN sequences after resampling:
+2025-05-07 13:30:00,049 - INFO - 
+Tau:
+2025-05-07 13:30:00,049 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,050 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,050 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,051 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,053 - INFO - 
+qc_Tau:
+2025-05-07 13:30:00,054 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,054 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,055 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,055 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,058 - INFO - 
+H:
+2025-05-07 13:30:00,059 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,059 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,060 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,060 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,063 - INFO - 
+qc_H:
+2025-05-07 13:30:00,063 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,064 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,064 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,064 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,067 - INFO - 
+qc_LE:
+2025-05-07 13:30:00,067 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,068 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,068 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,069 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,073 - INFO - 
+co2_flux:
+2025-05-07 13:30:00,074 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,074 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,074 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,075 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,077 - INFO - 
+qc_co2_flux:
+2025-05-07 13:30:00,078 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,078 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,079 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,079 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,081 - INFO - 
+h2o_flux:
+2025-05-07 13:30:00,082 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,082 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,082 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,083 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,086 - INFO - 
+qc_h2o_flux:
+2025-05-07 13:30:00,086 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,086 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,087 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,087 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,089 - INFO - 
+co2_mole_fraction:
+2025-05-07 13:30:00,090 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,090 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,090 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,091 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,094 - INFO - 
+h2o_mole_fraction:
+2025-05-07 13:30:00,094 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,095 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,095 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,095 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,098 - INFO - 
+u*:
+2025-05-07 13:30:00,098 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,099 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,099 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,100 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,103 - INFO - 
+L:
+2025-05-07 13:30:00,103 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,104 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,104 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,104 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,107 - INFO - 
+u_var:
+2025-05-07 13:30:00,107 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,107 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,108 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,108 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,111 - INFO - 
+v_var:
+2025-05-07 13:30:00,112 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,112 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,112 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,113 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,115 - INFO - 
+w_var:
+2025-05-07 13:30:00,115 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,116 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,116 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,117 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,119 - INFO - 
+ts_var:
+2025-05-07 13:30:00,120 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,120 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,121 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,121 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,137 - INFO - 
+LE:
+2025-05-07 13:30:00,144 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,156 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,160 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,161 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,164 - INFO - 
+SW_IN:
+2025-05-07 13:30:00,164 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,165 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,165 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,166 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,172 - INFO - 
+co2_flux_clean:
+2025-05-07 13:30:00,172 - INFO - Longest sequence: 138 points
+2025-05-07 13:30:00,172 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,177 - INFO - To: 2021-11-27 06:00:00
+2025-05-07 13:30:00,178 - INFO - Duration: 17 days 03:00:00
+2025-05-07 13:30:00,181 - INFO - 
+co2_flux_lin:
+2025-05-07 13:30:00,182 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,182 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,183 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,183 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,185 - INFO - 
+co2_flux_filled:
+2025-05-07 13:30:00,186 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,186 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,187 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,187 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,190 - INFO - 
+TA_1_1_1:
+2025-05-07 13:30:00,190 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,191 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,191 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,192 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,195 - INFO - 
+RH_1_1_1:
+2025-05-07 13:30:00,195 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,196 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,196 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,196 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,199 - INFO - 
+WS_1_1_1:
+2025-05-07 13:30:00,200 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,200 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,201 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,201 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,204 - INFO - 
+TS_1_1_1:
+2025-05-07 13:30:00,204 - INFO - Longest sequence: 135 points
+2025-05-07 13:30:00,205 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:30:00,205 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:30:00,206 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:30:00,230 - INFO - 
+NaN correlation between variables after resampling:
+2025-05-07 13:30:00,231 - INFO -                         Tau    qc_Tau         H      qc_H     qc_LE  co2_flux  \
+Tau                1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+qc_Tau             1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+H                  1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+qc_H               1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+qc_LE              1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+co2_flux           0.831912  0.831912  0.831912  0.831912  0.831912  1.000000   
+qc_co2_flux        1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+h2o_flux           1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+qc_h2o_flux        1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+co2_mole_fraction  1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+h2o_mole_fraction  1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+u*                 1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+L                  1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+u_var              1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+v_var              1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+w_var              1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+ts_var             1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+LE                 1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+SW_IN              1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+co2_flux_clean     0.771722  0.771722  0.771722  0.771722  0.771722  0.927649   
+co2_flux_lin       1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+co2_flux_filled    1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+TA_1_1_1           1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+RH_1_1_1           1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+WS_1_1_1           1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+TS_1_1_1           1.000000  1.000000  1.000000  1.000000  1.000000  0.831912   
+
+                   qc_co2_flux  h2o_flux  qc_h2o_flux  co2_mole_fraction  ...  \
+Tau                   1.000000  1.000000     1.000000           1.000000  ...   
+qc_Tau                1.000000  1.000000     1.000000           1.000000  ...   
+H                     1.000000  1.000000     1.000000           1.000000  ...   
+qc_H                  1.000000  1.000000     1.000000           1.000000  ...   
+qc_LE                 1.000000  1.000000     1.000000           1.000000  ...   
+co2_flux              0.831912  0.831912     0.831912           0.831912  ...   
+qc_co2_flux           1.000000  1.000000     1.000000           1.000000  ...   
+h2o_flux              1.000000  1.000000     1.000000           1.000000  ...   
+qc_h2o_flux           1.000000  1.000000     1.000000           1.000000  ...   
+co2_mole_fraction     1.000000  1.000000     1.000000           1.000000  ...   
+h2o_mole_fraction     1.000000  1.000000     1.000000           1.000000  ...   
+u*                    1.000000  1.000000     1.000000           1.000000  ...   
+L                     1.000000  1.000000     1.000000           1.000000  ...   
+u_var                 1.000000  1.000000     1.000000           1.000000  ...   
+v_var                 1.000000  1.000000     1.000000           1.000000  ...   
+w_var                 1.000000  1.000000     1.000000           1.000000  ...   
+ts_var                1.000000  1.000000     1.000000           1.000000  ...   
+LE                    1.000000  1.000000     1.000000           1.000000  ...   
+SW_IN                 1.000000  1.000000     1.000000           1.000000  ...   
+co2_flux_clean        0.771722  0.771722     0.771722           0.771722  ...   
+co2_flux_lin          1.000000  1.000000     1.000000           1.000000  ...   
+co2_flux_filled       1.000000  1.000000     1.000000           1.000000  ...   
+TA_1_1_1              1.000000  1.000000     1.000000           1.000000  ...   
+RH_1_1_1              1.000000  1.000000     1.000000           1.000000  ...   
+WS_1_1_1              1.000000  1.000000     1.000000           1.000000  ...   
+TS_1_1_1              1.000000  1.000000     1.000000           1.000000  ...   
+
+                     ts_var        LE     SW_IN  co2_flux_clean  co2_flux_lin  \
+Tau                1.000000  1.000000  1.000000        0.771722      1.000000   
+qc_Tau             1.000000  1.000000  1.000000        0.771722      1.000000   
+H                  1.000000  1.000000  1.000000        0.771722      1.000000   
+qc_H               1.000000  1.000000  1.000000        0.771722      1.000000   
+qc_LE              1.000000  1.000000  1.000000        0.771722      1.000000   
+co2_flux           0.831912  0.831912  0.831912        0.927649      0.831912   
+qc_co2_flux        1.000000  1.000000  1.000000        0.771722      1.000000   
+h2o_flux           1.000000  1.000000  1.000000        0.771722      1.000000   
+qc_h2o_flux        1.000000  1.000000  1.000000        0.771722      1.000000   
+co2_mole_fraction  1.000000  1.000000  1.000000        0.771722      1.000000   
+h2o_mole_fraction  1.000000  1.000000  1.000000        0.771722      1.000000   
+u*                 1.000000  1.000000  1.000000        0.771722      1.000000   
+L                  1.000000  1.000000  1.000000        0.771722      1.000000   
+u_var              1.000000  1.000000  1.000000        0.771722      1.000000   
+v_var              1.000000  1.000000  1.000000        0.771722      1.000000   
+w_var              1.000000  1.000000  1.000000        0.771722      1.000000   
+ts_var             1.000000  1.000000  1.000000        0.771722      1.000000   
+LE                 1.000000  1.000000  1.000000        0.771722      1.000000   
+SW_IN              1.000000  1.000000  1.000000        0.771722      1.000000   
+co2_flux_clean     0.771722  0.771722  0.771722        1.000000      0.771722   
+co2_flux_lin       1.000000  1.000000  1.000000        0.771722      1.000000   
+co2_flux_filled    1.000000  1.000000  1.000000        0.771722      1.000000   
+TA_1_1_1           1.000000  1.000000  1.000000        0.771722      1.000000   
+RH_1_1_1           1.000000  1.000000  1.000000        0.771722      1.000000   
+WS_1_1_1           1.000000  1.000000  1.000000        0.771722      1.000000   
+TS_1_1_1           1.000000  1.000000  1.000000        0.771722      1.000000   
+
+                   co2_flux_filled  TA_1_1_1  RH_1_1_1  WS_1_1_1  TS_1_1_1  
+Tau                       1.000000  1.000000  1.000000  1.000000  1.000000  
+qc_Tau                    1.000000  1.000000  1.000000  1.000000  1.000000  
+H                         1.000000  1.000000  1.000000  1.000000  1.000000  
+qc_H                      1.000000  1.000000  1.000000  1.000000  1.000000  
+qc_LE                     1.000000  1.000000  1.000000  1.000000  1.000000  
+co2_flux                  0.831912  0.831912  0.831912  0.831912  0.831912  
+qc_co2_flux               1.000000  1.000000  1.000000  1.000000  1.000000  
+h2o_flux                  1.000000  1.000000  1.000000  1.000000  1.000000  
+qc_h2o_flux               1.000000  1.000000  1.000000  1.000000  1.000000  
+co2_mole_fraction         1.000000  1.000000  1.000000  1.000000  1.000000  
+h2o_mole_fraction         1.000000  1.000000  1.000000  1.000000  1.000000  
+u*                        1.000000  1.000000  1.000000  1.000000  1.000000  
+L                         1.000000  1.000000  1.000000  1.000000  1.000000  
+u_var                     1.000000  1.000000  1.000000  1.000000  1.000000  
+v_var                     1.000000  1.000000  1.000000  1.000000  1.000000  
+w_var                     1.000000  1.000000  1.000000  1.000000  1.000000  
+ts_var                    1.000000  1.000000  1.000000  1.000000  1.000000  
+LE                        1.000000  1.000000  1.000000  1.000000  1.000000  
+SW_IN                     1.000000  1.000000  1.000000  1.000000  1.000000  
+co2_flux_clean            0.771722  0.771722  0.771722  0.771722  0.771722  
+co2_flux_lin              1.000000  1.000000  1.000000  1.000000  1.000000  
+co2_flux_filled           1.000000  1.000000  1.000000  1.000000  1.000000  
+TA_1_1_1                  1.000000  1.000000  1.000000  1.000000  1.000000  
+RH_1_1_1                  1.000000  1.000000  1.000000  1.000000  1.000000  
+WS_1_1_1                  1.000000  1.000000  1.000000  1.000000  1.000000  
+TS_1_1_1                  1.000000  1.000000  1.000000  1.000000  1.000000  
+
+[26 rows x 26 columns]
+2025-05-07 13:30:00,927 - INFO - 
+After Merging Data Information:
+2025-05-07 13:30:00,930 - INFO - Shape: (26296, 4)
+2025-05-07 13:30:00,931 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-07 13:30:00,932 - INFO - Missing Values:
+co2_flux_filled    2227
+TA                 2227
+SW_IN              2227
+TS_1_1_1           2227
+dtype: int64
+2025-05-07 13:30:00,933 - INFO - Shape after dropping NaN values: (24069, 4)
+2025-05-07 13:30:00,937 - INFO - 
+=== Feature Engineering ===
+2025-05-07 13:30:00,946 - INFO - 
+After Feature Engineering Information:
+2025-05-07 13:30:00,946 - INFO - Shape: (24069, 16)
+2025-05-07 13:30:00,947 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 13:30:00,948 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-07 13:30:00,948 - INFO - 
+=== Multicollinearity Check ===
+2025-05-07 13:30:01,296 - INFO - 
+VIF Analysis:
+2025-05-07 13:30:01,299 - INFO - VIF Threshold: 5
+2025-05-07 13:30:01,301 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  77.204108
+2         TS_1_1_1  21.091542
+0               TA  17.292043
+5         TA_night   9.971308
+11    cos_yearly_1   9.807374
+3         is_night   7.001008
+4          TA_SWIN   6.902903
+7      cos_daily_1   4.176213
+12    sin_yearly_1   2.525939
+8      sin_daily_1   1.732396
+10     sin_daily_2   1.152322
+13    cos_yearly_2   1.086253
+9      cos_daily_2   1.065105
+14    sin_yearly_2   1.017184
+2025-05-07 13:30:01,306 - INFO - whitelist: ['SW_IN']
+2025-05-07 13:30:01,922 - INFO - Only whitelist items with high vif available - abort...
+2025-05-07 13:30:01,923 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-05-07 13:30:01,925 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.443664
+1       is_night  4.371027
+2        TA_SWIN  3.561461
+3       TA_night  2.775266
+8   cos_yearly_1  2.502448
+4    cos_daily_1  2.483672
+5    sin_daily_1  1.345343
+9   sin_yearly_1  1.240210
+7    sin_daily_2  1.124253
+10  cos_yearly_2  1.067402
+6    cos_daily_2  1.062696
+11  sin_yearly_2  1.013015
+2025-05-07 13:30:01,930 - INFO - 
+=== Train/Test Split ===
+2025-05-07 13:30:01,935 - INFO - 
+=== Differencing ===
+2025-05-07 13:30:02,570 - INFO - 
+=== Model Training ===
+2025-05-07 13:50:33,156 - INFO - 
+=== Starting Analysis ===
+2025-05-07 13:50:33,157 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-07 13:50:33,158 - INFO - Total datapoints before resampling: 157776
+2025-05-07 13:50:33,167 - INFO - Datapoints with any NaN before resampling: 40582 (25.72%)
+2025-05-07 13:50:33,167 - INFO - 
+Temporal distribution of NaN values before resampling:
+2025-05-07 13:50:33,171 - INFO - 
+NaN counts by year before resampling:
+2025-05-07 13:50:33,171 - INFO - Timestamp
+2015    4257
+2016    5260
+2017    5061
+2018    4163
+2019    4164
+2020    3083
+2021    6513
+2022    4143
+2023    3938
+dtype: int64
+2025-05-07 13:50:33,174 - INFO - 
+NaN counts by month before resampling:
+2025-05-07 13:50:33,174 - INFO - Timestamp
+1     3432
+2     2167
+3     3214
+4     3727
+5     3045
+6     2833
+7     3442
+8     3971
+9     3310
+10    3103
+11    4005
+12    4333
+dtype: int64
+2025-05-07 13:50:33,176 - INFO - 
+NaN counts by hour before resampling:
+2025-05-07 13:50:33,177 - INFO - Timestamp
+0     1929
+1     1992
+2     2098
+3     2131
+4     2123
+5     2080
+6     1880
+7     1697
+8     1654
+9     1792
+10    1872
+11    1849
+12    1747
+13    1580
+14    1405
+15    1205
+16    1167
+17    1234
+18    1254
+19    1320
+20    1461
+21    1569
+22    1713
+23    1830
+dtype: int64
+2025-05-07 13:50:33,178 - INFO - 
+Longest NaN sequences before resampling:
+2025-05-07 13:50:33,178 - INFO - 
+Tau: No NaN values found
+2025-05-07 13:50:33,179 - INFO - 
+qc_Tau: No NaN values found
+2025-05-07 13:50:33,179 - INFO - 
+H: No NaN values found
+2025-05-07 13:50:33,180 - INFO - 
+qc_H: No NaN values found
+2025-05-07 13:50:33,181 - INFO - 
+qc_LE: No NaN values found
+2025-05-07 13:50:33,199 - INFO - 
+co2_flux:
+2025-05-07 13:50:33,199 - INFO - Longest sequence: 816 points
+2025-05-07 13:50:33,199 - INFO - From: 2021-11-10 00:30:00
+2025-05-07 13:50:33,200 - INFO - To: 2021-11-27 00:00:00
+2025-05-07 13:50:33,200 - INFO - Duration: 16 days 23:30:00
+2025-05-07 13:50:33,201 - INFO - 
+qc_co2_flux: No NaN values found
+2025-05-07 13:50:33,201 - INFO - 
+h2o_flux: No NaN values found
+2025-05-07 13:50:33,202 - INFO - 
+qc_h2o_flux: No NaN values found
+2025-05-07 13:50:33,203 - INFO - 
+co2_mole_fraction: No NaN values found
+2025-05-07 13:50:33,203 - INFO - 
+h2o_mole_fraction: No NaN values found
+2025-05-07 13:50:33,204 - INFO - 
+u*: No NaN values found
+2025-05-07 13:50:33,204 - INFO - 
+L: No NaN values found
+2025-05-07 13:50:33,205 - INFO - 
+u_var: No NaN values found
+2025-05-07 13:50:33,205 - INFO - 
+v_var: No NaN values found
+2025-05-07 13:50:33,206 - INFO - 
+w_var: No NaN values found
+2025-05-07 13:50:33,207 - INFO - 
+ts_var: No NaN values found
+2025-05-07 13:50:33,207 - INFO - 
+LE: No NaN values found
+2025-05-07 13:50:33,208 - INFO - 
+SW_IN: No NaN values found
+2025-05-07 13:50:33,285 - INFO - 
+co2_flux_clean:
+2025-05-07 13:50:33,286 - INFO - Longest sequence: 838 points
+2025-05-07 13:50:33,286 - INFO - From: 2021-11-10 00:30:00
+2025-05-07 13:50:33,287 - INFO - To: 2021-11-27 11:00:00
+2025-05-07 13:50:33,287 - INFO - Duration: 17 days 10:30:00
+2025-05-07 13:50:33,289 - INFO - 
+co2_flux_lin: No NaN values found
+2025-05-07 13:50:33,290 - INFO - 
+co2_flux_filled: No NaN values found
+2025-05-07 13:50:33,290 - INFO - 
+TA_1_1_1: No NaN values found
+2025-05-07 13:50:33,290 - INFO - 
+RH_1_1_1: No NaN values found
+2025-05-07 13:50:33,291 - INFO - 
+WS_1_1_1: No NaN values found
+2025-05-07 13:50:33,291 - INFO - 
+TS_1_1_1: No NaN values found
+2025-05-07 13:50:33,432 - INFO - 
+NaN correlation between variables before resampling:
+2025-05-07 13:50:33,433 - INFO -                    Tau  qc_Tau   H  qc_H  qc_LE  co2_flux  qc_co2_flux  \
+Tau                NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_Tau             NaN     NaN NaN   NaN    NaN       NaN          NaN   
+H                  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_H               NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_LE              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux           NaN     NaN NaN   NaN    NaN  1.000000          NaN   
+qc_co2_flux        NaN     NaN NaN   NaN    NaN       NaN          NaN   
+h2o_flux           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_h2o_flux        NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_mole_fraction  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+h2o_mole_fraction  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+u*                 NaN     NaN NaN   NaN    NaN       NaN          NaN   
+L                  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+u_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+v_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+w_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+ts_var             NaN     NaN NaN   NaN    NaN       NaN          NaN   
+LE                 NaN     NaN NaN   NaN    NaN       NaN          NaN   
+SW_IN              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux_clean     NaN     NaN NaN   NaN    NaN  0.781744          NaN   
+co2_flux_lin       NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux_filled    NaN     NaN NaN   NaN    NaN       NaN          NaN   
+TA_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+RH_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+WS_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+TS_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+
+                   h2o_flux  qc_h2o_flux  co2_mole_fraction  ...  ts_var  LE  \
+Tau                     NaN          NaN                NaN  ...     NaN NaN   
+qc_Tau                  NaN          NaN                NaN  ...     NaN NaN   
+H                       NaN          NaN                NaN  ...     NaN NaN   
+qc_H                    NaN          NaN                NaN  ...     NaN NaN   
+qc_LE                   NaN          NaN                NaN  ...     NaN NaN   
+co2_flux                NaN          NaN                NaN  ...     NaN NaN   
+qc_co2_flux             NaN          NaN                NaN  ...     NaN NaN   
+h2o_flux                NaN          NaN                NaN  ...     NaN NaN   
+qc_h2o_flux             NaN          NaN                NaN  ...     NaN NaN   
+co2_mole_fraction       NaN          NaN                NaN  ...     NaN NaN   
+h2o_mole_fraction       NaN          NaN                NaN  ...     NaN NaN   
+u*                      NaN          NaN                NaN  ...     NaN NaN   
+L                       NaN          NaN                NaN  ...     NaN NaN   
+u_var                   NaN          NaN                NaN  ...     NaN NaN   
+v_var                   NaN          NaN                NaN  ...     NaN NaN   
+w_var                   NaN          NaN                NaN  ...     NaN NaN   
+ts_var                  NaN          NaN                NaN  ...     NaN NaN   
+LE                      NaN          NaN                NaN  ...     NaN NaN   
+SW_IN                   NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_clean          NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_lin            NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_filled         NaN          NaN                NaN  ...     NaN NaN   
+TA_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+RH_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+WS_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+TS_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+
+                   SW_IN  co2_flux_clean  co2_flux_lin  co2_flux_filled  \
+Tau                  NaN             NaN           NaN              NaN   
+qc_Tau               NaN             NaN           NaN              NaN   
+H                    NaN             NaN           NaN              NaN   
+qc_H                 NaN             NaN           NaN              NaN   
+qc_LE                NaN             NaN           NaN              NaN   
+co2_flux             NaN        0.781744           NaN              NaN   
+qc_co2_flux          NaN             NaN           NaN              NaN   
+h2o_flux             NaN             NaN           NaN              NaN   
+qc_h2o_flux          NaN             NaN           NaN              NaN   
+co2_mole_fraction    NaN             NaN           NaN              NaN   
+h2o_mole_fraction    NaN             NaN           NaN              NaN   
+u*                   NaN             NaN           NaN              NaN   
+L                    NaN             NaN           NaN              NaN   
+u_var                NaN             NaN           NaN              NaN   
+v_var                NaN             NaN           NaN              NaN   
+w_var                NaN             NaN           NaN              NaN   
+ts_var               NaN             NaN           NaN              NaN   
+LE                   NaN             NaN           NaN              NaN   
+SW_IN                NaN             NaN           NaN              NaN   
+co2_flux_clean       NaN        1.000000           NaN              NaN   
+co2_flux_lin         NaN             NaN           NaN              NaN   
+co2_flux_filled      NaN             NaN           NaN              NaN   
+TA_1_1_1             NaN             NaN           NaN              NaN   
+RH_1_1_1             NaN             NaN           NaN              NaN   
+WS_1_1_1             NaN             NaN           NaN              NaN   
+TS_1_1_1             NaN             NaN           NaN              NaN   
+
+                   TA_1_1_1  RH_1_1_1  WS_1_1_1  TS_1_1_1  
+Tau                     NaN       NaN       NaN       NaN  
+qc_Tau                  NaN       NaN       NaN       NaN  
+H                       NaN       NaN       NaN       NaN  
+qc_H                    NaN       NaN       NaN       NaN  
+qc_LE                   NaN       NaN       NaN       NaN  
+co2_flux                NaN       NaN       NaN       NaN  
+qc_co2_flux             NaN       NaN       NaN       NaN  
+h2o_flux                NaN       NaN       NaN       NaN  
+qc_h2o_flux             NaN       NaN       NaN       NaN  
+co2_mole_fraction       NaN       NaN       NaN       NaN  
+h2o_mole_fraction       NaN       NaN       NaN       NaN  
+u*                      NaN       NaN       NaN       NaN  
+L                       NaN       NaN       NaN       NaN  
+u_var                   NaN       NaN       NaN       NaN  
+v_var                   NaN       NaN       NaN       NaN  
+w_var                   NaN       NaN       NaN       NaN  
+ts_var                  NaN       NaN       NaN       NaN  
+LE                      NaN       NaN       NaN       NaN  
+SW_IN                   NaN       NaN       NaN       NaN  
+co2_flux_clean          NaN       NaN       NaN       NaN  
+co2_flux_lin            NaN       NaN       NaN       NaN  
+co2_flux_filled         NaN       NaN       NaN       NaN  
+TA_1_1_1                NaN       NaN       NaN       NaN  
+RH_1_1_1                NaN       NaN       NaN       NaN  
+WS_1_1_1                NaN       NaN       NaN       NaN  
+TS_1_1_1                NaN       NaN       NaN       NaN  
+
+[26 rows x 26 columns]
+2025-05-07 13:50:33,912 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-07 13:50:33,913 - INFO - Total datapoints after resampling: 26296
+2025-05-07 13:50:33,915 - INFO - Datapoints with any NaN after resampling: 3536 (13.45%)
+2025-05-07 13:50:33,915 - INFO - 
+Temporal distribution of NaN values after resampling:
+2025-05-07 13:50:33,916 - INFO - 
+NaN counts by year after resampling:
+2025-05-07 13:50:33,917 - INFO - Timestamp
+2015    343
+2016    496
+2017    426
+2018    346
+2019    379
+2020    160
+2021    759
+2022    370
+2023    257
+dtype: int64
+2025-05-07 13:50:33,919 - INFO - 
+NaN counts by month after resampling:
+2025-05-07 13:50:33,919 - INFO - Timestamp
+1     273
+2     139
+3     290
+4     363
+5     233
+6     190
+7     280
+8     404
+9     238
+10    286
+11    420
+12    420
+dtype: int64
+2025-05-07 13:50:33,922 - INFO - 
+NaN counts by hour after resampling:
+2025-05-07 13:50:33,922 - INFO - Timestamp
+0     502
+3     644
+6     449
+9     429
+12    362
+15    361
+18    373
+21    416
+dtype: int64
+2025-05-07 13:50:33,923 - INFO - 
+Longest NaN sequences after resampling:
+2025-05-07 13:50:33,936 - INFO - 
+co2_flux:
+2025-05-07 13:50:33,937 - INFO - Longest sequence: 135 points
+2025-05-07 13:50:33,937 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:50:33,938 - INFO - To: 2021-11-26 21:00:00
+2025-05-07 13:50:33,938 - INFO - Duration: 16 days 18:00:00
+2025-05-07 13:50:33,945 - INFO - 
+co2_flux_clean:
+2025-05-07 13:50:33,945 - INFO - Longest sequence: 138 points
+2025-05-07 13:50:33,946 - INFO - From: 2021-11-10 03:00:00
+2025-05-07 13:50:33,946 - INFO - To: 2021-11-27 06:00:00
+2025-05-07 13:50:33,947 - INFO - Duration: 17 days 03:00:00
+2025-05-07 13:50:33,972 - INFO - 
+NaN correlation between variables after resampling:
+2025-05-07 13:50:33,972 - INFO -                    Tau  qc_Tau   H  qc_H  qc_LE  co2_flux  qc_co2_flux  \
+Tau                NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_Tau             NaN     NaN NaN   NaN    NaN       NaN          NaN   
+H                  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_H               NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_LE              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux           NaN     NaN NaN   NaN    NaN  1.000000          NaN   
+qc_co2_flux        NaN     NaN NaN   NaN    NaN       NaN          NaN   
+h2o_flux           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+qc_h2o_flux        NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_mole_fraction  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+h2o_mole_fraction  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+u*                 NaN     NaN NaN   NaN    NaN       NaN          NaN   
+L                  NaN     NaN NaN   NaN    NaN       NaN          NaN   
+u_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+v_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+w_var              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+ts_var             NaN     NaN NaN   NaN    NaN       NaN          NaN   
+LE                 NaN     NaN NaN   NaN    NaN       NaN          NaN   
+SW_IN              NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux_clean     NaN     NaN NaN   NaN    NaN  0.927649          NaN   
+co2_flux_lin       NaN     NaN NaN   NaN    NaN       NaN          NaN   
+co2_flux_filled    NaN     NaN NaN   NaN    NaN       NaN          NaN   
+TA_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+RH_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+WS_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+TS_1_1_1           NaN     NaN NaN   NaN    NaN       NaN          NaN   
+
+                   h2o_flux  qc_h2o_flux  co2_mole_fraction  ...  ts_var  LE  \
+Tau                     NaN          NaN                NaN  ...     NaN NaN   
+qc_Tau                  NaN          NaN                NaN  ...     NaN NaN   
+H                       NaN          NaN                NaN  ...     NaN NaN   
+qc_H                    NaN          NaN                NaN  ...     NaN NaN   
+qc_LE                   NaN          NaN                NaN  ...     NaN NaN   
+co2_flux                NaN          NaN                NaN  ...     NaN NaN   
+qc_co2_flux             NaN          NaN                NaN  ...     NaN NaN   
+h2o_flux                NaN          NaN                NaN  ...     NaN NaN   
+qc_h2o_flux             NaN          NaN                NaN  ...     NaN NaN   
+co2_mole_fraction       NaN          NaN                NaN  ...     NaN NaN   
+h2o_mole_fraction       NaN          NaN                NaN  ...     NaN NaN   
+u*                      NaN          NaN                NaN  ...     NaN NaN   
+L                       NaN          NaN                NaN  ...     NaN NaN   
+u_var                   NaN          NaN                NaN  ...     NaN NaN   
+v_var                   NaN          NaN                NaN  ...     NaN NaN   
+w_var                   NaN          NaN                NaN  ...     NaN NaN   
+ts_var                  NaN          NaN                NaN  ...     NaN NaN   
+LE                      NaN          NaN                NaN  ...     NaN NaN   
+SW_IN                   NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_clean          NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_lin            NaN          NaN                NaN  ...     NaN NaN   
+co2_flux_filled         NaN          NaN                NaN  ...     NaN NaN   
+TA_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+RH_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+WS_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+TS_1_1_1                NaN          NaN                NaN  ...     NaN NaN   
+
+                   SW_IN  co2_flux_clean  co2_flux_lin  co2_flux_filled  \
+Tau                  NaN             NaN           NaN              NaN   
+qc_Tau               NaN             NaN           NaN              NaN   
+H                    NaN             NaN           NaN              NaN   
+qc_H                 NaN             NaN           NaN              NaN   
+qc_LE                NaN             NaN           NaN              NaN   
+co2_flux             NaN        0.927649           NaN              NaN   
+qc_co2_flux          NaN             NaN           NaN              NaN   
+h2o_flux             NaN             NaN           NaN              NaN   
+qc_h2o_flux          NaN             NaN           NaN              NaN   
+co2_mole_fraction    NaN             NaN           NaN              NaN   
+h2o_mole_fraction    NaN             NaN           NaN              NaN   
+u*                   NaN             NaN           NaN              NaN   
+L                    NaN             NaN           NaN              NaN   
+u_var                NaN             NaN           NaN              NaN   
+v_var                NaN             NaN           NaN              NaN   
+w_var                NaN             NaN           NaN              NaN   
+ts_var               NaN             NaN           NaN              NaN   
+LE                   NaN             NaN           NaN              NaN   
+SW_IN                NaN             NaN           NaN              NaN   
+co2_flux_clean       NaN        1.000000           NaN              NaN   
+co2_flux_lin         NaN             NaN           NaN              NaN   
+co2_flux_filled      NaN             NaN           NaN              NaN   
+TA_1_1_1             NaN             NaN           NaN              NaN   
+RH_1_1_1             NaN             NaN           NaN              NaN   
+WS_1_1_1             NaN             NaN           NaN              NaN   
+TS_1_1_1             NaN             NaN           NaN              NaN   
+
+                   TA_1_1_1  RH_1_1_1  WS_1_1_1  TS_1_1_1  
+Tau                     NaN       NaN       NaN       NaN  
+qc_Tau                  NaN       NaN       NaN       NaN  
+H                       NaN       NaN       NaN       NaN  
+qc_H                    NaN       NaN       NaN       NaN  
+qc_LE                   NaN       NaN       NaN       NaN  
+co2_flux                NaN       NaN       NaN       NaN  
+qc_co2_flux             NaN       NaN       NaN       NaN  
+h2o_flux                NaN       NaN       NaN       NaN  
+qc_h2o_flux             NaN       NaN       NaN       NaN  
+co2_mole_fraction       NaN       NaN       NaN       NaN  
+h2o_mole_fraction       NaN       NaN       NaN       NaN  
+u*                      NaN       NaN       NaN       NaN  
+L                       NaN       NaN       NaN       NaN  
+u_var                   NaN       NaN       NaN       NaN  
+v_var                   NaN       NaN       NaN       NaN  
+w_var                   NaN       NaN       NaN       NaN  
+ts_var                  NaN       NaN       NaN       NaN  
+LE                      NaN       NaN       NaN       NaN  
+SW_IN                   NaN       NaN       NaN       NaN  
+co2_flux_clean          NaN       NaN       NaN       NaN  
+co2_flux_lin            NaN       NaN       NaN       NaN  
+co2_flux_filled         NaN       NaN       NaN       NaN  
+TA_1_1_1                NaN       NaN       NaN       NaN  
+RH_1_1_1                NaN       NaN       NaN       NaN  
+WS_1_1_1                NaN       NaN       NaN       NaN  
+TS_1_1_1                NaN       NaN       NaN       NaN  
+
+[26 rows x 26 columns]
+2025-05-07 13:50:34,833 - INFO - 
+After Merging Data Information:
+2025-05-07 13:50:34,833 - INFO - Shape: (26296, 4)
+2025-05-07 13:50:34,834 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-07 13:50:34,835 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-07 13:50:34,837 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-07 13:50:34,841 - INFO - 
+=== Feature Engineering ===
+2025-05-07 13:50:34,851 - INFO - 
+After Feature Engineering Information:
+2025-05-07 13:50:34,852 - INFO - Shape: (26296, 16)
+2025-05-07 13:50:34,852 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 13:50:34,854 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-07 13:50:34,854 - INFO - 
+=== Multicollinearity Check ===
+2025-05-07 13:50:35,535 - INFO - 
+VIF Analysis:
+2025-05-07 13:50:35,536 - INFO - VIF Threshold: 5
+2025-05-07 13:50:35,539 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  77.822375
+2         TS_1_1_1  20.276784
+0               TA  17.128661
+5         TA_night   9.934591
+11    cos_yearly_1   9.502632
+3         is_night   6.966139
+4          TA_SWIN   6.853194
+7      cos_daily_1   4.085858
+12    sin_yearly_1   2.501358
+8      sin_daily_1   1.710721
+10     sin_daily_2   1.146479
+13    cos_yearly_2   1.081935
+9      cos_daily_2   1.064588
+14    sin_yearly_2   1.017466
+2025-05-07 13:50:35,539 - INFO - whitelist: ['SW_IN']
+2025-05-07 13:50:36,738 - INFO - Only whitelist items with high vif available - abort...
+2025-05-07 13:50:36,744 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-05-07 13:50:36,746 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.292410
+1       is_night  4.328518
+2        TA_SWIN  3.545325
+3       TA_night  2.778462
+8   cos_yearly_1  2.495684
+4    cos_daily_1  2.434460
+5    sin_daily_1  1.331268
+9   sin_yearly_1  1.250198
+7    sin_daily_2  1.119478
+10  cos_yearly_2  1.065997
+6    cos_daily_2  1.062281
+11  sin_yearly_2  1.012639
+2025-05-07 13:50:36,751 - INFO - 
+=== Train/Test Split ===
+2025-05-07 13:50:36,757 - INFO - 
+=== Differencing ===
+2025-05-07 13:50:37,540 - INFO - 
+=== Model Training ===
+2025-05-07 13:53:44,031 - INFO - 
+=== Starting Analysis ===
+2025-05-07 13:53:44,032 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-07 13:53:44,033 - INFO - Total datapoints before resampling: 157776
+2025-05-07 13:53:44,038 - INFO - Total NaN values before resampling: 68139
+2025-05-07 13:53:44,041 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-07 13:53:44,064 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-07 13:53:44,065 - INFO - Total datapoints after resampling: 26296
+2025-05-07 13:53:44,066 - INFO - Total NaN values after resampling: 6637
+2025-05-07 13:53:44,068 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-07 13:53:44,071 - INFO - 
+After Merging Data Information:
+2025-05-07 13:53:44,071 - INFO - Shape: (26296, 4)
+2025-05-07 13:53:44,071 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-07 13:53:44,073 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-07 13:53:44,074 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-07 13:53:44,077 - INFO - 
+=== Feature Engineering ===
+2025-05-07 13:53:44,084 - INFO - 
+After Feature Engineering Information:
+2025-05-07 13:53:44,085 - INFO - Shape: (26296, 16)
+2025-05-07 13:53:44,085 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 13:53:44,086 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-07 13:53:44,089 - INFO - 
+=== Multicollinearity Check ===
+2025-05-07 13:53:44,508 - INFO - 
+VIF Analysis:
+2025-05-07 13:53:44,510 - INFO - VIF Threshold: 5
+2025-05-07 13:53:44,519 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  77.822375
+2         TS_1_1_1  20.276784
+0               TA  17.128661
+5         TA_night   9.934591
+11    cos_yearly_1   9.502632
+3         is_night   6.966139
+4          TA_SWIN   6.853194
+7      cos_daily_1   4.085858
+12    sin_yearly_1   2.501358
+8      sin_daily_1   1.710721
+10     sin_daily_2   1.146479
+13    cos_yearly_2   1.081935
+9      cos_daily_2   1.064588
+14    sin_yearly_2   1.017466
+2025-05-07 13:53:44,536 - INFO - whitelist: ['SW_IN']
+2025-05-07 13:53:45,521 - INFO - Only whitelist items with high vif available - abort...
+2025-05-07 13:53:45,522 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-05-07 13:53:45,527 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.292410
+1       is_night  4.328518
+2        TA_SWIN  3.545325
+3       TA_night  2.778462
+8   cos_yearly_1  2.495684
+4    cos_daily_1  2.434460
+5    sin_daily_1  1.331268
+9   sin_yearly_1  1.250198
+7    sin_daily_2  1.119478
+10  cos_yearly_2  1.065997
+6    cos_daily_2  1.062281
+11  sin_yearly_2  1.012639
+2025-05-07 13:53:45,533 - INFO - 
+=== Train/Test Split ===
+2025-05-07 13:53:45,537 - INFO - 
+=== Differencing ===
+2025-05-07 13:53:46,253 - INFO - 
+=== Model Training ===
+2025-05-07 13:56:00,938 - INFO - 
+=== Starting Analysis ===
+2025-05-07 13:56:00,939 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-07 13:56:00,939 - INFO - Total datapoints before resampling: 157776
+2025-05-07 13:56:00,944 - INFO - Total NaN values before resampling: 68139
+2025-05-07 13:56:00,950 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-07 13:56:00,973 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-07 13:56:00,974 - INFO - Total datapoints after resampling: 26296
+2025-05-07 13:56:00,975 - INFO - Total NaN values after resampling: 6637
+2025-05-07 13:56:00,977 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-07 13:56:00,980 - INFO - 
+After Merging Data Information:
+2025-05-07 13:56:00,980 - INFO - Shape: (26296, 4)
+2025-05-07 13:56:00,981 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-07 13:56:00,982 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-07 13:56:00,983 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-07 13:56:00,987 - INFO - 
+=== Feature Engineering ===
+2025-05-07 13:56:00,994 - INFO - 
+After Feature Engineering Information:
+2025-05-07 13:56:00,994 - INFO - Shape: (26296, 16)
+2025-05-07 13:56:00,994 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 13:56:00,996 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-07 13:56:00,996 - INFO - 
+=== Multicollinearity Check ===
+2025-05-07 13:56:01,207 - INFO - 
+VIF Analysis:
+2025-05-07 13:56:01,209 - INFO - VIF Threshold: 5
+2025-05-07 13:56:01,213 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  77.822375
+2         TS_1_1_1  20.276784
+0               TA  17.128661
+5         TA_night   9.934591
+11    cos_yearly_1   9.502632
+3         is_night   6.966139
+4          TA_SWIN   6.853194
+7      cos_daily_1   4.085858
+12    sin_yearly_1   2.501358
+8      sin_daily_1   1.710721
+10     sin_daily_2   1.146479
+13    cos_yearly_2   1.081935
+9      cos_daily_2   1.064588
+14    sin_yearly_2   1.017466
+2025-05-07 13:56:01,216 - INFO - whitelist: ['SW_IN']
+2025-05-07 13:56:01,657 - INFO - Only whitelist items with high vif available - abort...
+2025-05-07 13:56:01,658 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-05-07 13:56:01,660 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.292410
+1       is_night  4.328518
+2        TA_SWIN  3.545325
+3       TA_night  2.778462
+8   cos_yearly_1  2.495684
+4    cos_daily_1  2.434460
+5    sin_daily_1  1.331268
+9   sin_yearly_1  1.250198
+7    sin_daily_2  1.119478
+10  cos_yearly_2  1.065997
+6    cos_daily_2  1.062281
+11  sin_yearly_2  1.012639
+2025-05-07 13:56:01,667 - INFO - 
+=== Train/Test Split ===
+2025-05-07 13:56:01,670 - INFO - 
+=== Differencing ===
+2025-05-07 13:56:02,134 - INFO - 
+=== Model Training ===
+2025-05-07 14:50:40,450 - INFO - 
+--- Saving Trained Model ---
+2025-05-07 14:50:45,330 - INFO - Model successfully saved to: sarimax_model_20250507_145040.pkl
+2025-05-07 14:59:38,060 - INFO - Nutze 'flux_df' (Shape: (157776, 26)) aus dem globalen Scope.
+2025-05-07 14:59:38,906 - INFO - SARIMAX Modell geladen von sarimax_model_20250507_145040.pkl
+2025-05-07 14:59:38,907 - INFO - Vom SARIMAX-Modell erwartete exogene Variablen: ['SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 14:59:38,918 - INFO - Resampling und Vorbereitung für SARIMAX für Zeitraum: 2023-01-01 00:00:00 bis 2023-12-31 23:59:59
+2025-05-07 14:59:38,951 - INFO - SARIMAX Daten nach Resampling: (2920, 6), Spalten: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_soil', 'RH', 'WS']
+2025-05-07 14:59:38,953 - INFO - Standardisiere Features für SARIMAX (mit 2023er Perioden-Statistiken mangels Trainings-Stats).
+2025-05-07 14:59:38,962 - INFO - DataFrame nach SARIMAX Feature Engineering: (2920, 18), Spalten: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_soil', 'RH', 'WS', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_day', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 14:59:38,964 - INFO - Generiere Vorhersagen für 2023 mit SARIMAX...
+2025-05-07 15:04:28,358 - INFO - Nutze 'flux_df' (Shape: (157776, 26)) aus dem globalen Scope.
+2025-05-07 15:04:29,160 - INFO - SARIMAX Modell geladen von sarimax_model_20250507_145040.pkl
+2025-05-07 15:04:29,161 - INFO - Vom SARIMAX-Modell erwartete exogene Variablen: ['SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 15:04:29,163 - INFO - Resampling und Vorbereitung für SARIMAX für Zeitraum: 2023-01-01 00:00:00 bis 2023-12-31 23:59:59
+2025-05-07 15:04:29,173 - INFO - SARIMAX Daten nach Resampling: (2920, 6), Spalten: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_soil', 'RH', 'WS']
+2025-05-07 15:04:29,174 - INFO - Standardisiere Features für SARIMAX (mit Perioden-Statistiken).
+2025-05-07 15:04:29,180 - INFO - DataFrame nach SARIMAX Feature Engineering: (2920, 18), Spalten: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_soil', 'RH', 'WS', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_day', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-07 15:04:29,184 - INFO - Shape von y_2023_aligned für Vorhersage: (2920,)
+2025-05-07 15:04:29,184 - INFO - Shape von X_2023_aligned für Vorhersage: (2920, 12)
+2025-05-07 15:04:29,185 - INFO - NaNs in y_2023_aligned: 0
+2025-05-07 15:04:29,186 - INFO - NaNs in X_2023_aligned: 0
+2025-05-07 15:04:29,186 - INFO - Generiere Vorhersagen für 2023 mit SARIMAX...
+2025-05-07 15:04:29,259 - INFO - Vor dropna: Länge df_eval: 2920
+2025-05-07 15:04:29,264 - INFO - Vor dropna: NaNs in 'actual': 0
+2025-05-07 15:04:29,267 - INFO - Vor dropna: NaNs in 'predicted': 2340
+2025-05-07 15:04:29,271 - INFO - Nach dropna: Länge df_eval: 580
+2025-05-07 15:04:29,273 - INFO - Nach dropna: NaNs in 'actual': 0
+2025-05-07 15:04:29,274 - INFO - Nach dropna: NaNs in 'predicted': 0
+2025-05-07 15:04:30,120 - INFO - SARIMAX Full evaluation complete.
+2025-05-07 15:31:28,165 - INFO - Loaded SARIMAX model from sarimax_model_20250507_145040.pkl
+2025-05-07 15:33:58,772 - INFO - Loaded SARIMAX model from sarimax_model_20250507_145040.pkl
+2025-05-07 15:37:02,014 - INFO - Loaded SARIMAX model from sarimax_model_20250507_145040.pkl
+2025-05-08 14:58:54,915 - INFO - Loaded SARIMAX model from sarimax_model_20250507_145040.pkl
+2025-05-08 15:00:38,334 - INFO - Loaded SARIMAX model from sarimax_model_20250507_145040.pkl
+2025-05-08 15:02:30,269 - INFO - Loaded SARIMAX model from sarimax_model_20250507_145040.pkl
+2025-05-08 15:02:57,897 - INFO - Loaded SARIMAX model from sarimax_model_20250507_145040.pkl
+2025-05-09 12:56:00,177 - INFO - SARIMAX model loaded from sarimax_model_20250507_145040.pkl
+2025-05-09 12:56:00,551 - INFO - SARIMAX evaluation finished successfully.
+2025-05-09 12:59:49,215 - INFO - SARIMAX model loaded from sarimax_model_20250507_145040.pkl
+2025-05-09 13:03:41,871 - INFO - SARIMAX model loaded from sarimax_model_20250507_145040.pkl
+2025-05-09 13:03:42,214 - INFO - SARIMAX evaluation finished.
+2025-05-09 13:17:34,064 - INFO - Loading raw CSV files …
+2025-05-09 13:20:59,474 - INFO - Loading raw CSV files …
+2025-05-09 13:23:11,211 - INFO - Loading raw CSV files …
+2025-05-09 13:25:36,054 - INFO - Loading raw CSV files …
+2025-05-09 13:27:03,864 - WARNING - Dropping 21036 rows (NaNs → target:0  pred:21036)
+2025-05-09 13:31:56,022 - INFO - 
+=== Starting Analysis ===
+2025-05-09 13:31:56,023 - INFO - 
+=== Data Preparation ===
+2025-05-09 13:31:56,038 - INFO - 
+Initial Data Information:
+2025-05-09 13:31:56,039 - INFO - Shape: (11688, 1)
+2025-05-09 13:31:56,039 - INFO - Columns: ['co2_flux_filled']
+2025-05-09 13:31:56,040 - INFO - Missing Values:
+co2_flux_filled    0
+dtype: int64
+2025-05-09 13:31:56,041 - INFO - 
+=== Adding Meteorological Data ===
+2025-05-09 13:31:56,212 - INFO - 
+=== Feature Engineering ===
+2025-05-09 13:31:56,216 - INFO - 
+After Feature Engineering Information:
+2025-05-09 13:31:56,216 - INFO - Shape: (11688, 15)
+2025-05-09 13:31:56,217 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 13:31:56,218 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 13:31:56,218 - INFO - 
+=== Multicollinearity Check ===
+2025-05-09 13:31:56,561 - INFO - 
+VIF Analysis:
+2025-05-09 13:31:56,562 - INFO - VIF Threshold: 5
+2025-05-09 13:31:56,564 - INFO - Initial Features:
+          Variable        VIF
+5   SW_IN_is_night  74.049622
+0               TA  12.819810
+4         TA_night   9.698259
+3          TA_SWIN   7.041426
+2         is_night   6.862404
+6      cos_daily_1   3.911853
+10    cos_yearly_1   3.210575
+7      sin_daily_1   1.902050
+11    sin_yearly_1   1.375760
+9      sin_daily_2   1.176385
+12    cos_yearly_2   1.073103
+8      cos_daily_2   1.049092
+13    sin_yearly_2   1.018664
+2025-05-09 13:31:56,565 - INFO - whitelist['SW_IN']
+2025-05-09 13:31:56,747 - INFO - Only whitelist items with high vif available - abort...
+2025-05-09 13:31:56,749 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TA']
+2025-05-09 13:31:56,753 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.692073
+1       is_night  4.404262
+2        TA_SWIN  3.586146
+3       TA_night  2.779319
+8   cos_yearly_1  2.555263
+4    cos_daily_1  2.426267
+5    sin_daily_1  1.424633
+9   sin_yearly_1  1.247952
+7    sin_daily_2  1.144761
+10  cos_yearly_2  1.070019
+6    cos_daily_2  1.045913
+11  sin_yearly_2  1.013597
+2025-05-09 13:31:56,757 - INFO - 
+=== Train/Test Split ===
+2025-05-09 13:31:56,762 - INFO - 
+=== Differencing ===
+2025-05-09 13:31:57,014 - INFO - 
+=== Model Training ===
+2025-05-09 13:31:57,016 - INFO - SARIMAX Search Space:
+2025-05-09 13:31:57,019 - INFO - Seasonality (m): 8
+2025-05-09 13:31:57,020 - INFO - p range: 0-3, q range: 0-3
+2025-05-09 13:31:57,023 - INFO - P range: 0-2, Q range: 0-2
+2025-05-09 13:31:57,024 - INFO - d: 0, D: 0
+2025-05-09 13:33:28,648 - INFO - 
+=== Starting Analysis ===
+2025-05-09 13:33:28,649 - INFO - 
+=== Data Preparation ===
+2025-05-09 13:33:28,665 - INFO - 
+Initial Data Information:
+2025-05-09 13:33:28,666 - INFO - Shape: (11688, 1)
+2025-05-09 13:33:28,667 - INFO - Columns: ['co2_flux_filled']
+2025-05-09 13:33:28,667 - INFO - Missing Values:
+co2_flux_filled    0
+dtype: int64
+2025-05-09 13:33:28,669 - INFO - 
+=== Adding Meteorological Data ===
+2025-05-09 13:33:28,823 - INFO - 
+=== Feature Engineering ===
+2025-05-09 13:33:28,827 - INFO - 
+After Feature Engineering Information:
+2025-05-09 13:33:28,828 - INFO - Shape: (11688, 15)
+2025-05-09 13:33:28,828 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 13:33:28,829 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 13:33:28,829 - INFO - 
+=== Multicollinearity Check ===
+2025-05-09 13:33:28,922 - INFO - 
+VIF Analysis:
+2025-05-09 13:33:28,923 - INFO - VIF Threshold: 5
+2025-05-09 13:33:28,924 - INFO - Initial Features:
+          Variable        VIF
+5   SW_IN_is_night  74.049622
+0               TA  12.819810
+4         TA_night   9.698259
+3          TA_SWIN   7.041426
+2         is_night   6.862404
+6      cos_daily_1   3.911853
+10    cos_yearly_1   3.210575
+7      sin_daily_1   1.902050
+11    sin_yearly_1   1.375760
+9      sin_daily_2   1.176385
+12    cos_yearly_2   1.073103
+8      cos_daily_2   1.049092
+13    sin_yearly_2   1.018664
+2025-05-09 13:33:28,925 - INFO - whitelist['SW_IN']
+2025-05-09 13:33:29,073 - INFO - Only whitelist items with high vif available - abort...
+2025-05-09 13:33:29,074 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TA']
+2025-05-09 13:33:29,078 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.692073
+1       is_night  4.404262
+2        TA_SWIN  3.586146
+3       TA_night  2.779319
+8   cos_yearly_1  2.555263
+4    cos_daily_1  2.426267
+5    sin_daily_1  1.424633
+9   sin_yearly_1  1.247952
+7    sin_daily_2  1.144761
+10  cos_yearly_2  1.070019
+6    cos_daily_2  1.045913
+11  sin_yearly_2  1.013597
+2025-05-09 13:33:29,086 - INFO - 
+=== Train/Test Split ===
+2025-05-09 13:33:29,092 - INFO - 
+=== Differencing ===
+2025-05-09 13:33:29,445 - INFO - 
+=== Model Training ===
+2025-05-09 13:33:29,450 - INFO - SARIMAX Search Space:
+2025-05-09 13:33:29,457 - INFO - Seasonality (m): 8
+2025-05-09 13:33:29,484 - INFO - p range: 0-3, q range: 0-3
+2025-05-09 13:33:29,490 - INFO - P range: 0-2, Q range: 0-2
+2025-05-09 13:33:29,505 - INFO - d: 0, D: 0
+2025-05-09 13:40:05,092 - INFO - === Preparing Full Dataset ===
+2025-05-09 13:40:05,344 - INFO - 
+Prepared Dataset Information:
+2025-05-09 13:40:05,344 - INFO - Shape: (26296, 15)
+2025-05-09 13:40:05,345 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 13:40:05,347 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 13:40:05,350 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===
+2025-05-09 13:42:03,563 - INFO - Model Summary:
+                                     SARIMAX Results                                     
+=========================================================================================
+Dep. Variable:                   co2_flux_filled   No. Observations:                21036
+Model:             SARIMAX(2, 0, 1)x(2, 0, 1, 8)   Log Likelihood              -47157.795
+Date:                           Fri, 09 May 2025   AIC                          94357.590
+Time:                                   13:42:03   BIC                          94524.606
+Sample:                               01-01-2015   HQIC                         94412.101
+                                    - 03-14-2022                                         
+Covariance Type:                             opg                                         
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+TA                -0.0135      0.071     -0.191      0.849      -0.152       0.125
+SW_IN             -3.6829      0.231    -15.921      0.000      -4.136      -3.230
+is_night           0.8197      0.091      8.981      0.000       0.641       0.999
+TA_SWIN            0.3035      0.034      8.891      0.000       0.237       0.370
+TA_night           1.3249      0.073     18.169      0.000       1.182       1.468
+SW_IN_is_night     1.8788      0.230      8.158      0.000       1.427       2.330
+cos_daily_1        2.2724      0.282      8.062      0.000       1.720       2.825
+sin_daily_1       -0.5658      0.289     -1.957      0.050      -1.133       0.001
+cos_daily_2       -0.5167      0.211     -2.447      0.014      -0.930      -0.103
+sin_daily_2        0.4939      0.209      2.360      0.018       0.084       0.904
+cos_yearly_1       0.0687      0.177      0.388      0.698      -0.279       0.416
+sin_yearly_1      -0.1218      0.172     -0.709      0.478      -0.458       0.215
+cos_yearly_2       0.2499      0.096      2.610      0.009       0.062       0.438
+sin_yearly_2       0.0851      0.096      0.890      0.373      -0.102       0.273
+ar.L1              0.0994      0.902      0.110      0.912      -1.669       1.868
+ar.L2              0.0785      0.291      0.270      0.787      -0.492       0.649
+ma.L1              0.2226      0.903      0.247      0.805      -1.546       1.992
+ar.S.L8            1.0706      0.007    152.325      0.000       1.057       1.084
+ar.S.L16          -0.0791      0.007    -11.892      0.000      -0.092      -0.066
+ma.S.L8           -0.9163      0.004   -256.285      0.000      -0.923      -0.909
+sigma2             5.2252      0.039    135.592      0.000       5.150       5.301
+===================================================================================
+Ljung-Box (L1) (Q):                   0.10   Jarque-Bera (JB):              3323.33
+Prob(Q):                              0.75   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.89   Skew:                            -0.24
+Prob(H) (two-sided):                  0.00   Kurtosis:                         4.89
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+2025-05-09 13:42:04,174 - INFO - 
+--- Saving trained SARIMAX bundle ---
+2025-05-09 13:42:07,951 - INFO - Bundle saved → sarimax_bundle_20250509_134204.pkl
+2025-05-09 13:46:48,032 - INFO - === Daten vorbereiten ===
+2025-05-09 13:46:48,097 - INFO - 
+Prepared Dataset Information:
+2025-05-09 13:46:48,098 - INFO - Shape: (26296, 15)
+2025-05-09 13:46:48,098 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 13:46:48,100 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 13:46:48,102 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===
+2025-05-09 13:47:29,471 - INFO - === Daten vorbereiten ===
+2025-05-09 13:47:29,511 - INFO - 
+Prepared Dataset Information:
+2025-05-09 13:47:29,512 - INFO - Shape: (26296, 15)
+2025-05-09 13:47:29,512 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 13:47:29,514 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 13:47:29,515 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===
+2025-05-09 13:49:23,349 - INFO - Testmodell gespeichert unter: sarimax_testbundle_20250509_134922.pkl
+2025-05-09 13:53:41,674 - INFO - === Daten vorbereiten ===
+2025-05-09 13:53:41,731 - INFO - 
+Prepared Dataset Information:
+2025-05-09 13:53:41,732 - INFO - Shape: (26296, 15)
+2025-05-09 13:53:41,732 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 13:53:41,735 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 13:53:41,738 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===
+2025-05-09 13:55:26,626 - INFO - === Daten vorbereiten ===
+2025-05-09 13:55:26,666 - INFO - 
+Prepared Dataset Information:
+2025-05-09 13:55:26,667 - INFO - Shape: (26296, 15)
+2025-05-09 13:55:26,667 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 13:55:26,668 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 13:55:26,670 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===
+2025-05-09 13:57:27,178 - INFO - Testmodell gespeichert unter: sarimax_testbundle_20250509_135726.pkl
+2025-05-09 13:58:43,783 - INFO - === Daten vorbereiten ===
+2025-05-09 13:58:43,825 - INFO - 
+Prepared Dataset Information:
+2025-05-09 13:58:43,825 - INFO - Shape: (26296, 15)
+2025-05-09 13:58:43,826 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 13:58:43,827 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 13:58:43,829 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===
+2025-05-09 14:00:42,009 - INFO - Testmodell gespeichert unter: sarimax_testbundle_20250509_140040.pkl
+2025-05-09 14:19:05,166 - INFO - 
+=== Starting Analysis ===
+2025-05-09 14:19:05,167 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-09 14:19:05,167 - INFO - Total datapoints before resampling: 157776
+2025-05-09 14:19:05,171 - INFO - Total NaN values before resampling: 68139
+2025-05-09 14:19:05,174 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-09 14:19:05,197 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-09 14:19:05,197 - INFO - Total datapoints after resampling: 26296
+2025-05-09 14:19:05,199 - INFO - Total NaN values after resampling: 6637
+2025-05-09 14:19:05,200 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-09 14:19:05,203 - INFO - 
+After Merging Data Information:
+2025-05-09 14:19:05,203 - INFO - Shape: (26296, 4)
+2025-05-09 14:19:05,204 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-09 14:19:05,205 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-09 14:19:05,207 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-09 14:19:05,209 - INFO - 
+=== Feature Engineering ===
+2025-05-09 14:19:05,215 - INFO - 
+After Feature Engineering Information:
+2025-05-09 14:19:05,216 - INFO - Shape: (26296, 16)
+2025-05-09 14:19:05,216 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 14:19:05,217 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 14:19:05,217 - INFO - 
+=== Multicollinearity Check ===
+2025-05-09 14:19:05,527 - INFO - 
+VIF Analysis:
+2025-05-09 14:19:05,542 - INFO - VIF Threshold: 5
+2025-05-09 14:19:05,545 - INFO - Initial Features:
+          Variable            VIF
+0               TA  196073.957469
+5         TA_night   51779.561685
+2         TS_1_1_1      20.231154
+11    cos_yearly_1       9.217095
+12    sin_yearly_1       2.489694
+7      cos_daily_1       2.388572
+4          TA_SWIN       2.296263
+8      sin_daily_1       1.359310
+10     sin_daily_2       1.121509
+13    cos_yearly_2       1.078315
+9      cos_daily_2       1.061254
+14    sin_yearly_2       1.010379
+3         is_night       0.000000
+6   SW_IN_is_night            NaN
+2025-05-09 14:19:05,560 - INFO - whitelist: ['SW_IN']
+2025-05-09 14:19:06,047 - INFO - Only whitelist items with high vif available - abort...
+2025-05-09 14:19:06,050 - INFO - 
+Removed features due to high VIF: ['TA', 'TS_1_1_1']
+2025-05-09 14:19:06,054 - INFO - Final Features:
+          Variable       VIF
+0            SW_IN  5.524340
+3         TA_night  3.595831
+9     cos_yearly_1  2.949058
+5      cos_daily_1  2.374309
+2          TA_SWIN  2.268964
+10    sin_yearly_1  1.364707
+6      sin_daily_1  1.333894
+8      sin_daily_2  1.121550
+11    cos_yearly_2  1.064394
+7      cos_daily_2  1.060924
+12    sin_yearly_2  1.010368
+1         is_night  0.000000
+4   SW_IN_is_night       NaN
+2025-05-09 14:19:06,062 - INFO - 
+=== Train/Test Split ===
+2025-05-09 14:19:06,065 - INFO - 
+=== Differencing ===
+2025-05-09 14:19:06,661 - INFO - 
+=== Model Training ===
+2025-05-09 14:34:12,631 - INFO - 
+=== Starting Analysis ===
+2025-05-09 14:34:12,632 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-09 14:34:12,632 - INFO - Total datapoints before resampling: 157776
+2025-05-09 14:34:12,635 - INFO - Total NaN values before resampling: 68139
+2025-05-09 14:34:12,639 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-09 14:34:12,662 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-09 14:34:12,662 - INFO - Total datapoints after resampling: 26296
+2025-05-09 14:34:12,664 - INFO - Total NaN values after resampling: 6637
+2025-05-09 14:34:12,665 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-09 14:34:12,669 - INFO - 
+After Merging Data Information:
+2025-05-09 14:34:12,669 - INFO - Shape: (26296, 4)
+2025-05-09 14:34:12,670 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-09 14:34:12,671 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-09 14:34:12,672 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-09 14:34:12,674 - INFO - 
+=== Feature Engineering ===
+2025-05-09 14:34:12,681 - INFO - 
+After Feature Engineering Information:
+2025-05-09 14:34:12,682 - INFO - Shape: (26296, 16)
+2025-05-09 14:34:12,682 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 14:34:12,683 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 14:34:12,684 - INFO - 
+=== Multicollinearity Check ===
+2025-05-09 14:34:12,945 - INFO - 
+VIF Analysis:
+2025-05-09 14:34:12,947 - INFO - VIF Threshold: 5
+2025-05-09 14:34:12,950 - INFO - Initial Features:
+          Variable            VIF
+0               TA  196073.957469
+5         TA_night   51779.561685
+2         TS_1_1_1      20.231154
+11    cos_yearly_1       9.217095
+12    sin_yearly_1       2.489694
+7      cos_daily_1       2.388572
+4          TA_SWIN       2.296263
+8      sin_daily_1       1.359310
+10     sin_daily_2       1.121509
+13    cos_yearly_2       1.078315
+9      cos_daily_2       1.061254
+14    sin_yearly_2       1.010379
+3         is_night       0.000000
+6   SW_IN_is_night            NaN
+2025-05-09 14:34:12,951 - INFO - whitelist: ['SW_IN']
+2025-05-09 14:34:13,288 - INFO - Only whitelist items with high vif available - abort...
+2025-05-09 14:34:13,291 - INFO - 
+Removed features due to high VIF: ['TA', 'TS_1_1_1']
+2025-05-09 14:34:13,293 - INFO - Final Features:
+          Variable       VIF
+0            SW_IN  5.524340
+3         TA_night  3.595831
+9     cos_yearly_1  2.949058
+5      cos_daily_1  2.374309
+2          TA_SWIN  2.268964
+10    sin_yearly_1  1.364707
+6      sin_daily_1  1.333894
+8      sin_daily_2  1.121550
+11    cos_yearly_2  1.064394
+7      cos_daily_2  1.060924
+12    sin_yearly_2  1.010368
+1         is_night  0.000000
+4   SW_IN_is_night       NaN
+2025-05-09 14:34:13,298 - INFO - 
+=== Train/Test Split ===
+2025-05-09 14:34:13,302 - INFO - 
+=== Differencing ===
+2025-05-09 14:34:13,790 - INFO - 
+=== Model Training ===
+2025-05-09 14:44:36,202 - INFO - 
+=== Starting Analysis ===
+2025-05-09 14:44:36,203 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-09 14:44:36,204 - INFO - Total datapoints before resampling: 157776
+2025-05-09 14:44:36,214 - INFO - Total NaN values before resampling: 68139
+2025-05-09 14:44:36,218 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-09 14:44:36,242 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-09 14:44:36,243 - INFO - Total datapoints after resampling: 26296
+2025-05-09 14:44:36,245 - INFO - Total NaN values after resampling: 6637
+2025-05-09 14:44:36,250 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-09 14:44:36,253 - INFO - 
+After Merging Data Information:
+2025-05-09 14:44:36,254 - INFO - Shape: (26296, 4)
+2025-05-09 14:44:36,254 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-09 14:44:36,255 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-09 14:44:36,257 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-09 14:44:36,259 - INFO - 
+=== Feature Engineering ===
+2025-05-09 14:44:36,269 - INFO - 
+After Feature Engineering Information:
+2025-05-09 14:44:36,270 - INFO - Shape: (26296, 16)
+2025-05-09 14:44:36,270 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 14:44:36,272 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 14:44:36,277 - INFO - 
+=== Multicollinearity Check ===
+2025-05-09 14:44:36,621 - INFO - 
+VIF Analysis:
+2025-05-09 14:44:36,625 - INFO - VIF Threshold: 5
+2025-05-09 14:44:36,632 - INFO - Initial Features:
+          Variable            VIF
+0               TA  196073.957469
+5         TA_night   51779.561685
+2         TS_1_1_1      20.231154
+11    cos_yearly_1       9.217095
+12    sin_yearly_1       2.489694
+7      cos_daily_1       2.388572
+4          TA_SWIN       2.296263
+8      sin_daily_1       1.359310
+10     sin_daily_2       1.121509
+13    cos_yearly_2       1.078315
+9      cos_daily_2       1.061254
+14    sin_yearly_2       1.010379
+3         is_night       0.000000
+6   SW_IN_is_night            NaN
+2025-05-09 14:44:36,635 - INFO - whitelist: ['SW_IN']
+2025-05-09 14:44:37,020 - INFO - Only whitelist items with high vif available - abort...
+2025-05-09 14:44:37,021 - INFO - 
+Removed features due to high VIF: ['TA', 'TS_1_1_1']
+2025-05-09 14:44:37,025 - INFO - Final Features:
+          Variable       VIF
+0            SW_IN  5.524340
+3         TA_night  3.595831
+9     cos_yearly_1  2.949058
+5      cos_daily_1  2.374309
+2          TA_SWIN  2.268964
+10    sin_yearly_1  1.364707
+6      sin_daily_1  1.333894
+8      sin_daily_2  1.121550
+11    cos_yearly_2  1.064394
+7      cos_daily_2  1.060924
+12    sin_yearly_2  1.010368
+1         is_night  0.000000
+4   SW_IN_is_night       NaN
+2025-05-09 14:44:37,031 - INFO - 
+=== Train/Test Split ===
+2025-05-09 14:44:37,038 - INFO - 
+=== Differencing ===
+2025-05-09 14:44:37,821 - INFO - 
+=== Model Training ===
+2025-05-09 14:58:33,575 - INFO - 
+=== Starting Analysis ===
+2025-05-09 14:58:33,576 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-09 14:58:33,577 - INFO - Total datapoints before resampling: 157776
+2025-05-09 14:58:33,580 - INFO - Total NaN values before resampling: 68139
+2025-05-09 14:58:33,583 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-09 14:58:33,605 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-09 14:58:33,606 - INFO - Total datapoints after resampling: 26296
+2025-05-09 14:58:33,607 - INFO - Total NaN values after resampling: 6637
+2025-05-09 14:58:33,608 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-09 14:58:33,612 - INFO - 
+After Merging Data Information:
+2025-05-09 14:58:33,612 - INFO - Shape: (26296, 4)
+2025-05-09 14:58:33,612 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-09 14:58:33,613 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-09 14:58:33,614 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-09 14:58:33,617 - INFO - 
+=== Feature Engineering ===
+2025-05-09 14:58:33,623 - INFO - 
+After Feature Engineering Information:
+2025-05-09 14:58:33,623 - INFO - Shape: (26296, 16)
+2025-05-09 14:58:33,623 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 14:58:33,625 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 14:58:33,628 - INFO - 
+=== Multicollinearity Check ===
+2025-05-09 14:58:33,902 - INFO - 
+VIF Analysis:
+2025-05-09 14:58:33,903 - INFO - VIF Threshold: 5
+2025-05-09 14:58:33,908 - INFO - Initial Features:
+          Variable           VIF
+0               TA           inf
+5         TA_night  1.864064e+06
+2         TS_1_1_1  2.020411e+01
+11    cos_yearly_1  9.197453e+00
+12    sin_yearly_1  2.489377e+00
+7      cos_daily_1  2.363754e+00
+4          TA_SWIN  2.301344e+00
+8      sin_daily_1  1.352460e+00
+10     sin_daily_2  1.121723e+00
+13    cos_yearly_2  1.077906e+00
+9      cos_daily_2  1.061487e+00
+14    sin_yearly_2  1.010508e+00
+3         is_night  0.000000e+00
+6   SW_IN_is_night           NaN
+2025-05-09 14:58:33,909 - INFO - whitelist: ['SW_IN']
+2025-05-09 14:58:34,273 - INFO - Only whitelist items with high vif available - abort...
+2025-05-09 14:58:34,274 - INFO - 
+Removed features due to high VIF: ['TA', 'TS_1_1_1']
+2025-05-09 14:58:34,277 - INFO - Final Features:
+          Variable       VIF
+0            SW_IN  5.478887
+3         TA_night  3.594148
+9     cos_yearly_1  2.949500
+5      cos_daily_1  2.348581
+2          TA_SWIN  2.274386
+10    sin_yearly_1  1.362450
+6      sin_daily_1  1.326446
+8      sin_daily_2  1.121757
+11    cos_yearly_2  1.065006
+7      cos_daily_2  1.061163
+12    sin_yearly_2  1.010495
+1         is_night  0.000000
+4   SW_IN_is_night       NaN
+2025-05-09 14:58:34,281 - INFO - 
+=== Train/Test Split ===
+2025-05-09 14:58:34,285 - INFO - 
+=== Differencing ===
+2025-05-09 14:58:34,815 - INFO - 
+=== Model Training ===
+2025-05-09 15:00:29,402 - INFO - 
+=== Starting Analysis ===
+2025-05-09 15:00:29,403 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-09 15:00:29,403 - INFO - Total datapoints before resampling: 157776
+2025-05-09 15:00:29,407 - INFO - Total NaN values before resampling: 68139
+2025-05-09 15:00:29,411 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-09 15:00:29,431 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-09 15:00:29,432 - INFO - Total datapoints after resampling: 26296
+2025-05-09 15:00:29,433 - INFO - Total NaN values after resampling: 6637
+2025-05-09 15:00:29,435 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-09 15:00:29,439 - INFO - 
+After Merging Data Information:
+2025-05-09 15:00:29,439 - INFO - Shape: (26296, 4)
+2025-05-09 15:00:29,439 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-09 15:00:29,440 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-09 15:00:29,442 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-09 15:00:29,444 - INFO - 
+=== Feature Engineering ===
+2025-05-09 15:00:29,449 - INFO - 
+After Feature Engineering Information:
+2025-05-09 15:00:29,450 - INFO - Shape: (26296, 16)
+2025-05-09 15:00:29,450 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 15:00:29,451 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 15:00:29,454 - INFO - 
+=== Multicollinearity Check ===
+2025-05-09 15:00:29,703 - INFO - 
+VIF Analysis:
+2025-05-09 15:00:29,706 - INFO - VIF Threshold: 5
+2025-05-09 15:00:29,710 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  79.113188
+2         TS_1_1_1  20.141204
+0               TA  17.132126
+5         TA_night   9.957468
+11    cos_yearly_1   9.438930
+3         is_night   7.070197
+4          TA_SWIN   6.868015
+7      cos_daily_1   4.000358
+12    sin_yearly_1   2.489939
+8      sin_daily_1   1.686622
+10     sin_daily_2   1.146752
+13    cos_yearly_2   1.082506
+9      cos_daily_2   1.065165
+14    sin_yearly_2   1.017541
+2025-05-09 15:00:29,713 - INFO - whitelist: ['SW_IN']
+2025-05-09 15:00:30,352 - INFO - Only whitelist items with high vif available - abort...
+2025-05-09 15:00:30,354 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-05-09 15:00:30,361 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.257662
+1       is_night  4.334474
+2        TA_SWIN  3.547239
+3       TA_night  2.774667
+8   cos_yearly_1  2.496522
+4    cos_daily_1  2.409104
+5    sin_daily_1  1.324061
+9   sin_yearly_1  1.247168
+7    sin_daily_2  1.119854
+10  cos_yearly_2  1.066336
+6    cos_daily_2  1.062368
+11  sin_yearly_2  1.012866
+2025-05-09 15:00:30,366 - INFO - 
+=== Train/Test Split ===
+2025-05-09 15:00:30,377 - INFO - 
+=== Differencing ===
+2025-05-09 15:00:30,918 - INFO - 
+=== Model Training ===
+2025-05-09 18:44:44,686 - INFO - 
+=== Evaluating Feature Set: [] ===
+2025-05-09 18:45:00,711 - INFO - 
+=== Starting Analysis ===
+2025-05-09 18:45:00,711 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-09 18:45:00,712 - INFO - Total datapoints before resampling: 157776
+2025-05-09 18:45:00,789 - INFO - Total NaN values before resampling: 68139
+2025-05-09 18:45:00,795 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-09 18:45:00,832 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-09 18:45:00,832 - INFO - Total datapoints after resampling: 26296
+2025-05-09 18:45:00,834 - INFO - Total NaN values after resampling: 6637
+2025-05-09 18:45:00,836 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-09 18:45:00,841 - INFO - 
+After Merging Data Information:
+2025-05-09 18:45:00,841 - INFO - Shape: (26296, 4)
+2025-05-09 18:45:00,842 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-09 18:45:00,843 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-09 18:45:00,844 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-09 18:45:00,847 - INFO - 
+=== Feature Engineering ===
+2025-05-09 18:45:00,855 - INFO - 
+After Feature Engineering Information:
+2025-05-09 18:45:00,855 - INFO - Shape: (26296, 16)
+2025-05-09 18:45:00,855 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-09 18:45:00,857 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-09 18:45:00,861 - INFO - 
+=== Multicollinearity Check ===
+2025-05-09 18:45:01,125 - INFO - 
+VIF Analysis:
+2025-05-09 18:45:01,127 - INFO - VIF Threshold: 5
+2025-05-09 18:45:01,130 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  79.113188
+2         TS_1_1_1  20.141204
+0               TA  17.132126
+5         TA_night   9.957468
+11    cos_yearly_1   9.438930
+3         is_night   7.070197
+4          TA_SWIN   6.868015
+7      cos_daily_1   4.000358
+12    sin_yearly_1   2.489939
+8      sin_daily_1   1.686622
+10     sin_daily_2   1.146752
+13    cos_yearly_2   1.082506
+9      cos_daily_2   1.065165
+14    sin_yearly_2   1.017541
+2025-05-09 18:45:01,131 - INFO - whitelist: ['SW_IN']
+2025-05-09 18:45:01,685 - INFO - Only whitelist items with high vif available - abort...
+2025-05-09 18:45:01,687 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-05-09 18:45:01,690 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.257662
+1       is_night  4.334474
+2        TA_SWIN  3.547239
+3       TA_night  2.774667
+8   cos_yearly_1  2.496522
+4    cos_daily_1  2.409104
+5    sin_daily_1  1.324061
+9   sin_yearly_1  1.247168
+7    sin_daily_2  1.119854
+10  cos_yearly_2  1.066336
+6    cos_daily_2  1.062368
+11  sin_yearly_2  1.012866
+2025-05-09 18:45:01,698 - INFO - 
+=== Train/Test Split ===
+2025-05-09 18:45:01,703 - INFO - 
+=== Differencing ===
+2025-05-09 18:45:02,303 - INFO - 
+=== Model Training ===
+2025-05-09 18:46:31,847 - INFO - 
+=== Evaluating features: ['TA_SWIN'] ===
+2025-05-09 18:48:05,789 - INFO - 
+--- Testing Feature Set 1/9: [] ---
+2025-05-09 18:48:05,837 - INFO - 
+VIF Analysis:
+2025-05-09 18:48:05,851 - INFO - VIF Threshold: 5
+2025-05-09 18:48:05,857 - INFO - Initial Features:
+   Variable       VIF
+0        TA  6.217505
+2  TS_1_1_1  5.070524
+2025-05-09 18:48:05,858 - INFO - whitelist: ['SW_IN']
+2025-05-09 18:48:05,878 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-05-09 18:48:05,882 - INFO - Final Features:
+   Variable       VIF
+1  TS_1_1_1  1.127536
+0     SW_IN  1.127536
+2025-05-09 18:49:22,821 - INFO - 
+--- Testing Feature Set 1/9: [] ---
+2025-05-09 18:49:22,882 - INFO - 
+VIF Analysis:
+2025-05-09 18:49:22,888 - INFO - VIF Threshold: 5
+2025-05-09 18:49:22,892 - INFO - Initial Features:
+   Variable       VIF
+0        TA  6.217505
+2  TS_1_1_1  5.070524
+2025-05-09 18:49:22,895 - INFO - whitelist: ['SW_IN']
+2025-05-09 18:49:22,913 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-05-09 18:49:22,920 - INFO - Final Features:
+   Variable       VIF
+1  TS_1_1_1  1.127536
+0     SW_IN  1.127536
+2025-05-09 18:52:10,562 - INFO - 
+=== Running Feature Set 1: ['TA', 'SW_IN', 'TS_1_1_1'] ===
+2025-05-09 18:53:56,008 - INFO - 
+--- Running SARIMAX with Feature Set 1: ['TA', 'SW_IN', 'TS_1_1_1'] ---
+2025-05-09 18:55:03,988 - INFO - 
+--- Running SARIMAX with Feature Set 1: ['TA', 'SW_IN'] ---
+2025-05-09 18:55:04,075 - INFO - 
+VIF Analysis:
+2025-05-09 18:55:04,087 - INFO - VIF Threshold: 5
+2025-05-09 18:55:04,094 - INFO - Initial Features:
+   Variable       VIF
+0        TA  6.256958
+2  TS_1_1_1  5.095029
+3  is_night  3.376057
+2025-05-09 18:55:04,122 - INFO - 
+Removed features due to high VIF: ['TA']
+2025-05-09 18:55:04,123 - INFO - Final Features:
+   Variable       VIF
+0     SW_IN  3.480617
+2  is_night  3.354770
+1  TS_1_1_1  1.127538
+2025-05-09 18:55:04,392 - INFO - Differencing: d=0, D=0
+2025-05-16 14:07:15,275 - INFO - 
+=== Starting Analysis ===
+2025-05-16 14:07:15,276 - INFO - 
+=== NaN Analysis BEFORE Resampling ===
+2025-05-16 14:07:15,277 - INFO - Total datapoints before resampling: 157776
+2025-05-16 14:07:15,283 - INFO - Total NaN values before resampling: 68139
+2025-05-16 14:07:15,288 - INFO - NaN count per column before resampling:
+Tau                      0
+qc_Tau                   0
+H                        0
+qc_H                     0
+qc_LE                    0
+co2_flux             27557
+qc_co2_flux              0
+h2o_flux                 0
+qc_h2o_flux              0
+co2_mole_fraction        0
+h2o_mole_fraction        0
+u*                       0
+L                        0
+u_var                    0
+v_var                    0
+w_var                    0
+ts_var                   0
+LE                       0
+SW_IN                    0
+co2_flux_clean       40582
+co2_flux_lin             0
+co2_flux_filled          0
+TA_1_1_1                 0
+RH_1_1_1                 0
+WS_1_1_1                 0
+TS_1_1_1                 0
+dtype: int64
+2025-05-16 14:07:15,313 - INFO - 
+=== NaN Analysis AFTER Resampling ===
+2025-05-16 14:07:15,313 - INFO - Total datapoints after resampling: 26296
+2025-05-16 14:07:15,315 - INFO - Total NaN values after resampling: 6637
+2025-05-16 14:07:15,317 - INFO - NaN count per column after resampling:
+Tau                     0
+qc_Tau                  0
+H                       0
+qc_H                    0
+qc_LE                   0
+co2_flux             3101
+qc_co2_flux             0
+h2o_flux                0
+qc_h2o_flux             0
+co2_mole_fraction       0
+h2o_mole_fraction       0
+u*                      0
+L                       0
+u_var                   0
+v_var                   0
+w_var                   0
+ts_var                  0
+LE                      0
+SW_IN                   0
+co2_flux_clean       3536
+co2_flux_lin            0
+co2_flux_filled         0
+TA_1_1_1                0
+RH_1_1_1                0
+WS_1_1_1                0
+TS_1_1_1                0
+dtype: int64
+2025-05-16 14:07:15,319 - INFO - 
+After Merging Data Information:
+2025-05-16 14:07:15,320 - INFO - Shape: (26296, 4)
+2025-05-16 14:07:15,320 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1']
+2025-05-16 14:07:15,321 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+dtype: int64
+2025-05-16 14:07:15,322 - INFO - Shape after dropping NaN values: (26296, 4)
+2025-05-16 14:07:15,325 - INFO - 
+=== Feature Engineering ===
+2025-05-16 14:07:15,331 - INFO - 
+After Feature Engineering Information:
+2025-05-16 14:07:15,331 - INFO - Shape: (26296, 16)
+2025-05-16 14:07:15,332 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'TS_1_1_1', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-05-16 14:07:15,333 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+TS_1_1_1           0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-05-16 14:07:15,337 - INFO - 
+=== Multicollinearity Check ===
+2025-05-16 14:07:15,594 - INFO - 
+VIF Analysis:
+2025-05-16 14:07:15,598 - INFO - VIF Threshold: 5
+2025-05-16 14:07:15,603 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  79.113188
+2         TS_1_1_1  20.141204
+0               TA  17.132126
+5         TA_night   9.957468
+11    cos_yearly_1   9.438930
+3         is_night   7.070197
+4          TA_SWIN   6.868015
+7      cos_daily_1   4.000358
+12    sin_yearly_1   2.489939
+8      sin_daily_1   1.686622
+10     sin_daily_2   1.146752
+13    cos_yearly_2   1.082506
+9      cos_daily_2   1.065165
+14    sin_yearly_2   1.017541
+2025-05-16 14:07:15,605 - INFO - whitelist: ['SW_IN']
+2025-05-16 14:07:16,059 - INFO - Only whitelist items with high vif available - abort...
+2025-05-16 14:07:16,062 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-05-16 14:07:16,065 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.257662
+1       is_night  4.334474
+2        TA_SWIN  3.547239
+3       TA_night  2.774667
+8   cos_yearly_1  2.496522
+4    cos_daily_1  2.409104
+5    sin_daily_1  1.324061
+9   sin_yearly_1  1.247168
+7    sin_daily_2  1.119854
+10  cos_yearly_2  1.066336
+6    cos_daily_2  1.062368
+11  sin_yearly_2  1.012866
+2025-05-16 14:07:16,068 - INFO - 
+=== Train/Test Split ===
+2025-05-16 14:07:16,071 - INFO - 
+=== Differencing ===
+2025-05-16 14:07:16,574 - INFO - 
+=== Model Training ===

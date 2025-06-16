@@ -1,0 +1,135 @@
+2025-04-25 19:20:56,917 - INFO - === Preparing Full Dataset ===
+2025-04-25 19:22:01,532 - INFO - === Preparing Full Dataset ===
+2025-04-25 19:22:01,706 - INFO - 
+Prepared Dataset Information:
+2025-04-25 19:22:01,707 - INFO - Shape: (24069, 15)
+2025-04-25 19:22:01,707 - INFO - Columns: ['co2_flux_filled', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-04-25 19:22:01,709 - INFO - Missing Values:
+co2_flux_filled    0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-04-25 19:22:01,710 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===
+2025-04-25 19:23:21,417 - INFO - Model Summary:
+                                     SARIMAX Results                                     
+=========================================================================================
+Dep. Variable:                   co2_flux_filled   No. Observations:                19255
+Model:             SARIMAX(2, 0, 1)x(2, 0, 1, 8)   Log Likelihood              -44201.884
+Date:                           Fri, 25 Apr 2025   AIC                          88445.768
+Time:                                   19:23:21   BIC                          88610.924
+Sample:                                        0   HQIC                         88499.904
+                                         - 19255                                         
+Covariance Type:                             opg                                         
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+TA                -0.5086      0.077     -6.573      0.000      -0.660      -0.357
+SW_IN             -3.2706      0.209    -15.671      0.000      -3.680      -2.862
+is_night           1.3635      0.097     14.047      0.000       1.173       1.554
+TA_SWIN            0.4450      0.038     11.729      0.000       0.371       0.519
+TA_night           1.7994      0.080     22.584      0.000       1.643       1.956
+SW_IN_is_night     1.3846      0.207      6.685      0.000       0.979       1.791
+cos_daily_1        2.2039      0.069     31.723      0.000       2.068       2.340
+sin_daily_1       -0.4547      0.058     -7.836      0.000      -0.568      -0.341
+cos_daily_2       -0.6171      0.036    -17.308      0.000      -0.687      -0.547
+sin_daily_2        0.5225      0.036     14.710      0.000       0.453       0.592
+cos_yearly_1      -0.1095      0.174     -0.628      0.530      -0.451       0.232
+sin_yearly_1      -0.1968      0.164     -1.201      0.230      -0.518       0.124
+cos_yearly_2       0.2651      0.094      2.811      0.005       0.080       0.450
+sin_yearly_2       0.0769      0.096      0.804      0.421      -0.111       0.264
+ar.L1              0.7331      1.684      0.435      0.663      -2.567       4.034
+ar.L2             -0.1334      0.534     -0.250      0.803      -1.180       0.913
+ma.L1             -0.4149      1.684     -0.246      0.805      -3.716       2.886
+ar.S.L8            1.0980      0.007    146.920      0.000       1.083       1.113
+ar.S.L16          -0.1067      0.007    -15.083      0.000      -0.121      -0.093
+ma.S.L8           -0.9193      0.004   -243.887      0.000      -0.927      -0.912
+sigma2             5.8378      0.042    138.035      0.000       5.755       5.921
+===================================================================================
+Ljung-Box (L1) (Q):                   0.01   Jarque-Bera (JB):              4497.23
+Prob(Q):                              0.92   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.88   Skew:                            -0.25
+Prob(H) (two-sided):                  0.00   Kurtosis:                         5.32
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+2025-04-25 19:37:51,235 - INFO - === Preparing Full Dataset ===
+2025-04-25 19:37:51,608 - INFO - 
+Prepared Dataset Information:
+2025-04-25 19:37:51,609 - INFO - Shape: (24069, 16)
+2025-04-25 19:37:51,610 - INFO - Columns: ['co2_flux_filled', 'TS_1_1_1', 'TA', 'SW_IN', 'is_night', 'TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2']
+2025-04-25 19:37:51,611 - INFO - Missing Values:
+co2_flux_filled    0
+TS_1_1_1           0
+TA                 0
+SW_IN              0
+is_night           0
+TA_SWIN            0
+TA_night           0
+SW_IN_is_night     0
+cos_daily_1        0
+sin_daily_1        0
+cos_daily_2        0
+sin_daily_2        0
+cos_yearly_1       0
+sin_yearly_1       0
+cos_yearly_2       0
+sin_yearly_2       0
+dtype: int64
+2025-04-25 19:37:51,613 - INFO - === Training Fixed SARIMAX(2,0,1)x(2,0,1,8) Model ===
+2025-04-25 19:39:27,258 - INFO - Model Summary:
+                                     SARIMAX Results                                     
+=========================================================================================
+Dep. Variable:                   co2_flux_filled   No. Observations:                19255
+Model:             SARIMAX(2, 0, 1)x(2, 0, 1, 8)   Log Likelihood              -44184.343
+Date:                           Fri, 25 Apr 2025   AIC                          88412.686
+Time:                                   19:39:27   BIC                          88585.707
+Sample:                                        0   HQIC                         88469.400
+                                         - 19255                                         
+Covariance Type:                             opg                                         
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+TS_1_1_1          -0.3225      0.133     -2.419      0.016      -0.584      -0.061
+TA                -0.1803      0.090     -2.004      0.045      -0.357      -0.004
+SW_IN             -3.4574      0.209    -16.547      0.000      -3.867      -3.048
+is_night           1.4963      0.097     15.462      0.000       1.307       1.686
+TA_SWIN            0.3835      0.038     10.095      0.000       0.309       0.458
+TA_night           1.6077      0.079     20.385      0.000       1.453       1.762
+SW_IN_is_night     1.5630      0.207      7.548      0.000       1.157       1.969
+cos_daily_1        2.1521      0.070     30.872      0.000       2.015       2.289
+sin_daily_1       -0.4727      0.059     -8.050      0.000      -0.588      -0.358
+cos_daily_2       -0.5791      0.036    -16.285      0.000      -0.649      -0.509
+sin_daily_2        0.5032      0.035     14.195      0.000       0.434       0.573
+cos_yearly_1      -0.4264      0.216     -1.973      0.049      -0.850      -0.003
+sin_yearly_1      -0.3387      0.173     -1.963      0.050      -0.677      -0.000
+cos_yearly_2       0.2929      0.095      3.088      0.002       0.107       0.479
+sin_yearly_2       0.0996      0.096      1.035      0.301      -0.089       0.288
+ar.L1              0.7195      1.890      0.381      0.703      -2.985       4.424
+ar.L2             -0.1287      0.609     -0.211      0.833      -1.323       1.066
+ma.L1             -0.3966      1.890     -0.210      0.834      -4.102       3.309
+ar.S.L8            1.0975      0.007    148.213      0.000       1.083       1.112
+ar.S.L16          -0.1051      0.007    -14.872      0.000      -0.119      -0.091
+ma.S.L8           -0.9202      0.004   -251.593      0.000      -0.927      -0.913
+sigma2             5.8435      0.042    137.656      0.000       5.760       5.927
+===================================================================================
+Ljung-Box (L1) (Q):                   0.45   Jarque-Bera (JB):              4511.49
+Prob(Q):                              0.50   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.88   Skew:                            -0.25
+Prob(H) (two-sided):                  0.00   Kurtosis:                         5.32
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).

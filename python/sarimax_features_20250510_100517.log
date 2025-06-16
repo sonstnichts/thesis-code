@@ -1,0 +1,77 @@
+2025-05-10 10:05:17,479 - INFO - 
+--- Running SARIMAX with Feature Set 1: ['TA', 'SW_IN', 'TA_SWIN', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_yearly_1', 'sin_yearly_1'] ---
+2025-05-10 10:05:17,630 - INFO - 
+VIF Analysis:
+2025-05-10 10:05:17,632 - INFO - VIF Threshold: 5
+2025-05-10 10:05:17,638 - INFO - Initial Features:
+         Variable        VIF
+5  SW_IN_is_night  78.391532
+2        TS_1_1_1  19.881141
+8    cos_yearly_1   9.268186
+0              TA   7.941123
+3        is_night   6.638702
+6     cos_daily_1   3.783624
+4         TA_SWIN   2.466121
+9    sin_yearly_1   2.440908
+7     sin_daily_1   1.625117
+2025-05-10 10:05:17,789 - INFO - Only whitelist items with high vif available - abort...
+2025-05-10 10:05:17,791 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1']
+2025-05-10 10:05:17,793 - INFO - Final Features:
+       Variable       VIF
+1         SW_IN  7.780349
+2      is_night  4.137450
+0            TA  3.538921
+6  cos_yearly_1  2.894985
+3       TA_SWIN  2.325655
+4   cos_daily_1  2.271085
+7  sin_yearly_1  1.346341
+5   sin_daily_1  1.291552
+2025-05-10 10:05:17,988 - INFO - Differencing: d=0, D=0
+2025-05-10 12:02:57,422 - INFO - Evaluation Metrics for Feature Set 1:
+2025-05-10 12:02:57,472 - INFO - MAE: 2.1420
+2025-05-10 12:02:57,475 - INFO - RMSE: 2.7923
+2025-05-10 12:02:57,477 - INFO - R²: 0.6231
+2025-05-10 12:02:58,151 - INFO - 
+--- Running SARIMAX with Feature Set 2: ['TA_SWIN', 'TA_night', 'SW_IN_is_night', 'cos_daily_1', 'sin_daily_1', 'cos_daily_2', 'sin_daily_2', 'cos_yearly_1', 'sin_yearly_1', 'cos_yearly_2', 'sin_yearly_2', 'is_night'] ---
+2025-05-10 12:02:58,606 - INFO - 
+VIF Analysis:
+2025-05-10 12:02:58,618 - INFO - VIF Threshold: 5
+2025-05-10 12:02:58,620 - INFO - Initial Features:
+          Variable        VIF
+6   SW_IN_is_night  79.113188
+2         TS_1_1_1  20.141204
+0               TA  17.132126
+5         TA_night   9.957468
+11    cos_yearly_1   9.438930
+3         is_night   7.070197
+4          TA_SWIN   6.868015
+7      cos_daily_1   4.000358
+12    sin_yearly_1   2.489939
+8      sin_daily_1   1.686622
+10     sin_daily_2   1.146752
+13    cos_yearly_2   1.082506
+9      cos_daily_2   1.065165
+14    sin_yearly_2   1.017541
+2025-05-10 12:02:59,320 - INFO - Only whitelist items with high vif available - abort...
+2025-05-10 12:02:59,323 - INFO - 
+Removed features due to high VIF: ['SW_IN_is_night', 'TS_1_1_1', 'TA']
+2025-05-10 12:02:59,326 - INFO - Final Features:
+        Variable       VIF
+0          SW_IN  9.257662
+1       is_night  4.334474
+2        TA_SWIN  3.547239
+3       TA_night  2.774667
+8   cos_yearly_1  2.496522
+4    cos_daily_1  2.409104
+5    sin_daily_1  1.324061
+9   sin_yearly_1  1.247168
+7    sin_daily_2  1.119854
+10  cos_yearly_2  1.066336
+6    cos_daily_2  1.062368
+11  sin_yearly_2  1.012866
+2025-05-10 12:02:59,495 - INFO - Differencing: d=0, D=0
+2025-05-10 13:28:08,494 - INFO - Evaluation Metrics for Feature Set 2:
+2025-05-10 13:28:08,520 - INFO - MAE: 2.0868
+2025-05-10 13:28:08,527 - INFO - RMSE: 2.7561
+2025-05-10 13:28:08,531 - INFO - R²: 0.6328
